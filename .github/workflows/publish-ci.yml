@@ -53,7 +53,7 @@ jobs:
       - name: Deploy to Github
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.BLOG_GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/.vitepress/dist
 
       - name: Deploy to Tencent Cloud
