@@ -1,0 +1,8 @@
+# scripts/*
+dist
+**/dist
+cache
+node_modules/
+**/**/node_modules
+!.vitepress
+tsconfig.json

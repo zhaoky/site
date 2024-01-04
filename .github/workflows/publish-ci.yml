@@ -1,0 +1,66 @@
+name: auto deploy server
+
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+    tags:
+      - v*
+      - v*.*
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: latest
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "::set-output name=STORE_PATH::$(pnpm store path)"
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm docs:build
+
+      - name: Deploy to Github
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+
+      - name: Deploy to Tencent Cloud
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
+          ARGS: -avzr --delete
+          SOURCE: ./docs/.vitepress/dist
+          REMOTE_HOST: ${{ secrets.HOST_IP_ADDR }}
+          REMOTE_USER: ${{ secrets.HOST_DEPLOY_USER }}
+          TARGET: ${{ secrets.HOST_DEPLOY_PATH }}
+          EXCLUDE: /node_modules/

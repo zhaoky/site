@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "DavidAnson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "qiu8310.minapp-vscode"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "*.{js,jsx,ts,tsx,vue}": [
+    "eslint --cache --fix",
+    "prettier --write --list-different"
+  ],
+  "*.{html,css,scss,sass,less,styl}": [
+    "pnpm lint"
+  ],
+  "docs/**/*.{md,mdx}": [
+    "pnpm markdownlint:fix"
+  ]
+}
