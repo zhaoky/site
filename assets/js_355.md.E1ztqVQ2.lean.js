@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as n}from"./chunks/framework.zbpA_oTj.js";const o=JSON.parse('{"title":"深浅拷贝总结","description":"","frontmatter":{},"headers":[],"relativePath":"js/355.md","filePath":"js/355.md"}'),h={name:"js/355.md"},l=n("",65),k=[l];function p(t,e,E,r,d,g){return a(),i("div",null,k)}const c=s(h,[["render",p]]);export{o as __pageData,c as default};

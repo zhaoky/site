@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as n}from"./chunks/framework.zbpA_oTj.js";const F=JSON.parse('{"title":"JavaScript设计模式（转）","description":"","frontmatter":{},"headers":[],"relativePath":"hexo/406.md","filePath":"hexo/406.md"}'),h={name:"hexo/406.md"},l=n("",113),k=[l];function p(t,E,e,r,d,g){return a(),i("div",null,k)}const c=s(h,[["render",p]]);export{F as __pageData,c as default};

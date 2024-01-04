@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as t}from"./chunks/framework.zbpA_oTj.js";const g=JSON.parse('{"title":"css3 media媒体查询器用法总结","description":"","frontmatter":{},"headers":[],"relativePath":"css/180.md","filePath":"css/180.md"}'),h={name:"css/180.md"},l=t("",41),n=[l];function e(p,k,d,E,r,c){return a(),i("div",null,n)}const y=s(h,[["render",e]]);export{g as __pageData,y as default};
