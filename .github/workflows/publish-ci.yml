@@ -68,7 +68,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
           ARGS: -avzr --delete
-          SOURCE: ./docs/.vitepress/dist ./docs/.vitepress/demo ./docs/.vitepress/config
+          SOURCE: ./docs/.vitepress/dist ./docs/.vitepress/demo ./docs/.vitepress/config/docker-compose.yml ./docs/.vitepress/config/Dockerfile_blog ./docs/.vitepress/config/Dockerfile_demo ./docs/.vitepress/config/nginx_blog.conf ./docs/.vitepress/config/nginx_demo.conf
           REMOTE_HOST: ${{ secrets.HOST_IP_ADDR }}
           REMOTE_USER: ${{ secrets.HOST_DEPLOY_USER }}
           TARGET: ${{ secrets.HOST_DEPLOY_PATH }}
