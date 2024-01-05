@@ -11,3 +11,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .eslintcache
+docs/.vitepress/demo
+docs/.vitepress/config

@@ -28,9 +28,11 @@
     "lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
+    "docs:build-copy": "vitepress build docs",
     "docs:preview": "pnpm docs:build && vitepress preview docs",
     "docs:new": "pnpm --filter scripts start",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "copy":"./copy.sh"
   },
   "dependencies": {
     "vue": "^3.4.3"

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  blog:
+    build:
+      context: .
+      dockerfile: Dockerfile_blog
+    volumes:
+      - ./../dist1:/usr/share/nginx/html
+    ports:
+      - "1000:80"
+  demo:
+    build:
+      context: .
+      dockerfile: Dockerfile_demo
+    volumes:
+      - ./../demo:/usr/share/nginx/html
+    ports:
+      - "2000:81"
