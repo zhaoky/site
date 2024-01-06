@@ -10,11 +10,11 @@ hero:
     src: /base/logo.png
   actions:
     - theme: brand
-      text: 个人博客
-      link: /code/webpack4/372.html
+      text: 经验沉淀
+      link: /exp/189
     - theme: alt
-      text: 个人简历（未开放）
-      link:
+      text: 源码系列
+      link: /code/webpack4/372
 
 features:
   - icon:
@@ -35,6 +35,6 @@ features:
       src: /base/knowledge.svg
       width: 10
       height: 10
-    title: 成功案例
-    details: 111
+    title: 领域经验
+    details: 电商、营销、SCM、CDP、MA等
 ---

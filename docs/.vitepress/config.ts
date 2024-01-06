@@ -22,12 +22,17 @@ export const config = {
     outlineTitle: '本文大纲',
     nav: [
       {
-        text: 'Micro Frontends',
-        link: '/micro/414',
+        text: '微前端',
+        link: '/micro/999',
         activeMatch: '/micro',
       },
       {
-        text: 'Source Code',
+        text: '经验沉淀',
+        link: '/exp/189',
+        activeMatch: '/exp',
+      },
+      {
+        text: '源码系列',
         items: [
           {
             text: 'webpack 4',
@@ -42,24 +47,9 @@ export const config = {
         ],
       },
       {
-        text: 'JavaScript',
-        link: '/js/402',
-        activeMatch: '/js',
-      },
-      {
-        text: 'CSS',
-        link: '/css/180',
-        activeMatch: '/css',
-      },
-      {
-        text: 'MISC',
-        link: '/misc/409',
+        text: '其他杂项',
+        link: '/misc/130',
         activeMatch: '/misc',
-      },
-      {
-        text: 'HEXO',
-        link: '/hexo/130',
-        activeMatch: '/hexo',
       },
     ],
 

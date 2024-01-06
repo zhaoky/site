@@ -17,22 +17,16 @@ export const LIGHT_MODE_BAR_COLOR = '#f6f6f7';
 
 export const sidebarRouter = {
   micro: {
-    'Micro Frontends': 'index',
+    微前端: 'index',
   },
   code: {
     'webpack 4': 'webpack4',
     'vue 2': 'vue2',
   },
-  js: {
-    JavaScript: 'index',
-  },
-  css: {
-    CSS: 'index',
+  exp: {
+    经验沉淀: 'index',
   },
   misc: {
-    MISC: 'index',
-  },
-  hexo: {
-    HEXO: 'index',
+    其他杂项: 'index',
   },
 } as const;
