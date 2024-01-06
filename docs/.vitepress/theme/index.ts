@@ -5,7 +5,6 @@ import Theme from 'vitepress/theme';
 import Layout from './components/page-layout.vue';
 import { createMediumZoomProvider } from '../plugins/useMediumZoom';
 import { trackBaiduPV } from '../plugins/analysis';
-import { changeSearchDetailView } from '../plugins/search';
 import './styles/index.stylus';
 
 export default {
@@ -15,8 +14,6 @@ export default {
     createMediumZoomProvider(app as App<unknown>, router);
 
     if (!import.meta.env.SSR) {
-      changeSearchDetailView();
-
       window.addEventListener('hashchange', () => {
         const { href } = window.location;
         trackBaiduPV(href);

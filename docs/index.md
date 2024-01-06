@@ -5,7 +5,7 @@ layout: home
 hero:
   name: '前端轻语'
   text: ''
-  tagline: 外包专家外包专家外包专家外包专家外包专家外包专家外包专家外包专家外包专家外包专家外包专家外包专家外包专家外包专家
+  tagline: korey的前端笔记
   image:
     src: /base/logo.png
   actions:

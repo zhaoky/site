@@ -5,7 +5,6 @@ import { pwa } from './configs/pwa';
 import * as c from './configs/const';
 import { withPwa } from '@vite-pwa/vitepress';
 import { getSidebar } from './configs/sidebar';
-import { search } from './configs/search';
 // https://vitepress.dev/reference/site-config
 export const config = {
   title: c.title,
@@ -67,14 +66,11 @@ export const config = {
     sidebar: getSidebar(),
 
     socialLinks: [
-
       {
         icon: 'github',
         link: 'https://github.com/zhaoky',
       },
     ],
-
-    search,
   },
 };
 
