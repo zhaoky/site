@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n}from"./chunks/framework.zbpA_oTj.js";const g=JSON.parse('{"title":"函数声明、函数表达式等浅析","description":"","frontmatter":{},"headers":[],"relativePath":"js/230.md","filePath":"js/230.md"}'),l={name:"js/230.md"},h=n("",25),p=[h];function t(k,e,E,d,r,c){return a(),i("div",null,p)}const y=s(l,[["render",t]]);export{g as __pageData,y as default};

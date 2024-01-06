@@ -1,0 +1,1 @@
+import{_ as i,c as s,o as e,U as a}from"./chunks/framework.UMIDyG6S.js";const u=JSON.parse('{"title":"CSS Grid布局","description":"","frontmatter":{},"headers":[],"relativePath":"css/353.md","filePath":"css/353.md"}'),l={name:"css/353.md"},t=a("",12),d=[t];function n(o,c,p,r,h,k){return e(),s("div",null,d)}const E=i(l,[["render",n]]);export{u as __pageData,E as default};

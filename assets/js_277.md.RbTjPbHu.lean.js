@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as n,bq as h}from"./chunks/framework.UMIDyG6S.js";const c=JSON.parse('{"title":"JS 原型与原型链详解（转）","description":"","frontmatter":{},"headers":[],"relativePath":"js/277.md","filePath":"js/277.md"}'),t={name:"js/277.md"},p=n("",135),k=[p];function l(e,r,E,o,d,g){return a(),i("div",null,k)}const F=s(t,[["render",l]]);export{c as __pageData,F as default};

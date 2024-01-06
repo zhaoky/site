@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as n}from"./chunks/framework.UMIDyG6S.js";const F=JSON.parse('{"title":"proxy适用场景","description":"","frontmatter":{},"headers":[],"relativePath":"js/371.md","filePath":"js/371.md"}'),h={name:"js/371.md"},k=n("",29),l=[k];function p(t,E,e,r,d,g){return a(),i("div",null,l)}const c=s(h,[["render",p]]);export{F as __pageData,c as default};

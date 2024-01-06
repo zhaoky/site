@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as e,U as i}from"./chunks/framework.zbpA_oTj.js";const g=JSON.parse('{"title":"ast简介","description":"","frontmatter":{},"headers":[],"relativePath":"hexo/367.md","filePath":"hexo/367.md"}'),t={name:"hexo/367.md"},n=i("",24),r=[n];function h(l,p,k,o,d,c){return e(),a("div",null,r)}const y=s(t,[["render",h]]);export{g as __pageData,y as default};

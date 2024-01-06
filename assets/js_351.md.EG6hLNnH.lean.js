@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as c,U as d}from"./chunks/framework.zbpA_oTj.js";const _=JSON.parse('{"title":"JS遍历对象的方式","description":"","frontmatter":{},"headers":[],"relativePath":"js/351.md","filePath":"js/351.md"}'),a={name:"js/351.md"},t=d("",11),r=[t];function l(i,s,n,h,f,b){return c(),o("div",null,r)}const m=e(a,[["render",l]]);export{_ as __pageData,m as default};

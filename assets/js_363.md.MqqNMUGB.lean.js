@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as i,U as e}from"./chunks/framework.UMIDyG6S.js";const E=JSON.parse('{"title":"NFE（具名函数表达式）的问题","description":"","frontmatter":{},"headers":[],"relativePath":"js/363.md","filePath":"js/363.md"}'),t={name:"js/363.md"},n=e("",7),l=[n];function o(h,p,r,c,d,k){return i(),a("div",null,l)}const _=s(t,[["render",o]]);export{E as __pageData,_ as default};

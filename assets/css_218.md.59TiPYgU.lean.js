@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as e}from"./chunks/framework.UMIDyG6S.js";const g=JSON.parse('{"title":"移动端前端适配方案总结","description":"","frontmatter":{},"headers":[],"relativePath":"css/218.md","filePath":"css/218.md"}'),n={name:"css/218.md"},h=e("",79),l=[h];function t(p,k,d,r,o,E){return a(),i("div",null,l)}const y=s(n,[["render",t]]);export{g as __pageData,y as default};
