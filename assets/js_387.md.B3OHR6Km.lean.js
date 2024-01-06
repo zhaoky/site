@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n}from"./chunks/framework.UMIDyG6S.js";const o=JSON.parse('{"title":"ES6 系列之 let 和 const（转）","description":"","frontmatter":{},"headers":[],"relativePath":"js/387.md","filePath":"js/387.md"}'),h={name:"js/387.md"},l=n("",93),p=[l];function k(t,e,E,d,r,g){return a(),i("div",null,p)}const y=s(h,[["render",k]]);export{o as __pageData,y as default};

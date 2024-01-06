@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as l}from"./chunks/framework.UMIDyG6S.js";const g=JSON.parse('{"title":"flex布局总结","description":"","frontmatter":{},"headers":[],"relativePath":"css/203.md","filePath":"css/203.md"}'),e={name:"css/203.md"},n=l("",12),t=[n];function h(k,p,d,r,E,c){return a(),i("div",null,t)}const y=s(e,[["render",h]]);export{g as __pageData,y as default};

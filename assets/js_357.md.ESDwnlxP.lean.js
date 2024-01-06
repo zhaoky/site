@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n,bw as h}from"./chunks/framework.UMIDyG6S.js";const c=JSON.parse('{"title":"观察者模式和发布订阅模式的区别","description":"","frontmatter":{},"headers":[],"relativePath":"js/357.md","filePath":"js/357.md"}'),k={name:"js/357.md"},l=n("",15),p=[l];function t(E,e,r,d,g,y){return a(),i("div",null,p)}const o=s(k,[["render",t]]);export{c as __pageData,o as default};
