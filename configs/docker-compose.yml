@@ -16,3 +16,11 @@ services:
       - ./demo:/usr/share/nginx/html
     ports:
       - "2000:81"
+  resume:
+    build:
+      context: .
+      dockerfile: Dockerfile_resume
+    volumes:
+      - ./resume:/usr/share/nginx/html
+    ports:
+      - "3000:82"

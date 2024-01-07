@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Untitled Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    #a {
+      margin-top: 5%;
+    }
+
+    #r {
+      font-size: 30px;
+      position: fixed;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-44px);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="a">请按键盘或鼠标，谢谢。</div>
+  <div id="r"></div>
+</body>
+<script>
+  document.onkeydown = function (e) {
+    document.getElementById('r').innerHTML = `
+      <div>
+        <div>key: ${e.key}</div>   
+        <div>keyCode: ${e.keyCode}</div>   
+        <div>which: ${e.which}</div>   
+        <div>code: ${e.code}</div>   
+      </div>
+      `;
+  };
+</script>
+
+</html>

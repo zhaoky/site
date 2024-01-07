@@ -30,8 +30,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "pnpm docs:build && vitepress preview docs",
     "docs:new": "pnpm --filter scripts start",
-    "prepare": "husky install",
-    "copy":"./copy.sh"
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.4.3"

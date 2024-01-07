@@ -1,0 +1,6 @@
+# Dockerfile_demo
+FROM nginx:latest
+COPY ./resume /usr/share/nginx/html
+COPY ./nginx_resume.conf /etc/nginx/conf.d/default.conf
+EXPOSE 82
+CMD ["nginx", "-g", "daemon off;"]

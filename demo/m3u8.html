@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线流地址测试</title>
+    <script src="https://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.3.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div><input type="text" placeholder="输入在线地址" style="width: 400px" id='input'><button id='btn'>测试</button></div>
+    <div id="id_test_video" style="width:100%; height:auto; margin-top: 50px;"></div>
+</body>
+<script>
+    var player = null;
+    function setPlayer(url) {
+        player && player.destroy() && (player = null);
+        player = new TcPlayer('id_test_video', {
+            "m3u8": url,
+            "autoplay": true,
+            "width": '480',
+            "height": '320'
+        });
+    }
+    setPlayer('http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8');
+    document.getElementById('btn').addEventListener('click', function () {
+        const value = document.getElementById('input').value;
+        setPlayer(value);
+    });
+</script>
+
+</html>

@@ -56,19 +56,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/.vitepress/dist
 
-
-      - name: Make script executable
-        run: chmod +x copy.sh
-
-      - name: Copy demo
-        run: pnpm copy
-
       - name: Deploy to Tencent Cloud
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
           ARGS: -avzr --delete
-          SOURCE: ./docs/.vitepress/dist ./docs/.vitepress/demo ./docs/.vitepress/config/docker-compose.yml ./docs/.vitepress/config/Dockerfile_blog ./docs/.vitepress/config/Dockerfile_demo ./docs/.vitepress/config/nginx_blog.conf ./docs/.vitepress/config/nginx_demo.conf
+          SOURCE: ./docs/.vitepress/dist ./demo ./configs/docker-compose.yml ./configs/Dockerfile_blog ./configs/Dockerfile_demo ./configs/nginx_blog.conf ./configs/nginx_demo.conf
           REMOTE_HOST: ${{ secrets.HOST_IP_ADDR }}
           REMOTE_USER: ${{ secrets.HOST_DEPLOY_USER }}
           TARGET: ${{ secrets.HOST_DEPLOY_PATH }}
