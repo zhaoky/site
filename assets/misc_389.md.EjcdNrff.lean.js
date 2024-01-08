@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n}from"./chunks/framework.H2RWGpQP.js";const c=JSON.parse('{"title":"柯里化与反柯里化（转）","description":"","frontmatter":{},"headers":[],"relativePath":"misc/389.md","filePath":"misc/389.md"}'),h={name:"misc/389.md"},k=n("",39),p=[k];function l(t,e,E,r,d,g){return a(),i("div",null,p)}const F=s(h,[["render",l]]);export{c as __pageData,F as default};
