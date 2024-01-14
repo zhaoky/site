@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as e,U as i}from"./chunks/framework.GU250d-J.js";const g=JSON.parse('{"title":"ast简介","description":"","frontmatter":{},"headers":[],"relativePath":"misc/367.md","filePath":"misc/367.md"}'),t={name:"misc/367.md"},n=i("",24),r=[n];function h(l,p,k,o,d,c){return e(),a("div",null,r)}const y=s(t,[["render",h]]);export{g as __pageData,y as default};
