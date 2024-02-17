@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as c,U as d}from"./chunks/framework.6i15RKC2.js";const u=JSON.parse('{"title":"JS遍历对象的方式","description":"","frontmatter":{},"headers":[],"relativePath":"misc/351.md","filePath":"misc/351.md"}'),a={name:"misc/351.md"},t=d("",11),r=[t];function l(i,s,n,h,f,b){return c(),o("div",null,r)}const _=e(a,[["render",l]]);export{u as __pageData,_ as default};

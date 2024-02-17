@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n}from"./chunks/framework.GU250d-J.js";const o=JSON.parse('{"title":"自定义事件","description":"","frontmatter":{},"headers":[],"relativePath":"misc/362.md","filePath":"misc/362.md"}'),e={name:"misc/362.md"},t=n("",13),h=[t];function l(p,k,E,r,d,g){return a(),i("div",null,h)}const y=s(e,[["render",l]]);export{o as __pageData,y as default};

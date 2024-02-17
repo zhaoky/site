@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as h}from"./chunks/framework.6i15RKC2.js";const c=JSON.parse('{"title":"前端冷知识集锦（转）","description":"","frontmatter":{},"headers":[],"relativePath":"misc/131.md","filePath":"misc/131.md"}'),t={name:"misc/131.md"},n=h("",82),l=[n];function k(p,e,d,E,r,g){return a(),i("div",null,l)}const y=s(t,[["render",k]]);export{c as __pageData,y as default};

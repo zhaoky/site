@@ -1,1 +1,0 @@
-import{_ as e,c as a,o,U as i}from"./chunks/framework.GU250d-J.js";const b=JSON.parse('{"title":"鉴权方案实现小结（转）","description":"","frontmatter":{},"headers":[],"relativePath":"misc/404.md","filePath":"misc/404.md"}'),t={name:"misc/404.md"},s=i("",51),l=[s];function n(c,h,r,k,d,u){return o(),a("div",null,l)}const p=e(t,[["render",n]]);export{b as __pageData,p as default};
