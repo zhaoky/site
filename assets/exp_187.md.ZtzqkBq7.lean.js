@@ -1,1 +1,0 @@
-import{_ as e,c as l,o,U as t}from"./chunks/framework.6i15RKC2.js";const p=JSON.parse('{"title":"css 视觉格式化模型","description":"","frontmatter":{},"headers":[],"relativePath":"exp/187.md","filePath":"exp/187.md"}'),a={name:"exp/187.md"},r=t("",12),i=[r];function n(s,h,S,d,_,c){return o(),l("div",null,i)}const m=e(a,[["render",n]]);export{p as __pageData,m as default};
