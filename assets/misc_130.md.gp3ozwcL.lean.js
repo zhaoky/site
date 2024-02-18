@@ -1,1 +1,0 @@
-import{_ as s,c as t,o as a,U as i}from"./chunks/framework.UL-wCBb3.js";const u=JSON.parse('{"title":"IE条件注释（转）","description":"","frontmatter":{},"headers":[],"relativePath":"misc/130.md","filePath":"misc/130.md"}'),e={name:"misc/130.md"},n=i("",37),l=[n];function h(p,o,r,d,g,c){return a(),t("div",null,l)}const q=s(e,[["render",h]]);export{u as __pageData,q as default};

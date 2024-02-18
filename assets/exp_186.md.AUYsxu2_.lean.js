@@ -1,1 +1,0 @@
-import{_ as a,c as e,o as t,U as s,a4 as r,a5 as o}from"./chunks/framework.UL-wCBb3.js";const u=JSON.parse('{"title":"现代 CSS","description":"","frontmatter":{},"headers":[],"relativePath":"exp/186.md","filePath":"exp/186.md"}'),c={name:"exp/186.md"},_=s("",5),i=[_];function n(l,S,d,h,p,m){return t(),e("div",null,i)}const C=a(c,[["render",n]]);export{u as __pageData,C as default};
