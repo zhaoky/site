@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 经验沉淀
-      link: /exp/189
+      link: /exp/186
     - theme: alt
       text: 源码系列
       link: /code/webpack4/372

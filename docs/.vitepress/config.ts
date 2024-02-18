@@ -29,7 +29,7 @@ export const config = {
       },
       {
         text: '经验沉淀',
-        link: '/exp/189',
+        link: '/exp/186',
         activeMatch: '/exp',
       },
       {
