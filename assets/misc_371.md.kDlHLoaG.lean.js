@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n}from"./chunks/framework.7BZ-Q4AH.js";const F=JSON.parse('{"title":"proxy适用场景","description":"","frontmatter":{},"headers":[],"relativePath":"misc/371.md","filePath":"misc/371.md"}'),h={name:"misc/371.md"},k=n("",29),l=[k];function p(t,E,e,r,d,g){return a(),i("div",null,l)}const c=s(h,[["render",p]]);export{F as __pageData,c as default};
