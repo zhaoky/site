@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as e}from"./chunks/framework.jJTSjmj7.js";const g=JSON.parse('{"title":"移动端前端适配方案总结（过时待更新）","description":"","frontmatter":{},"headers":[],"relativePath":"exp/218.md","filePath":"exp/218.md"}'),n={name:"exp/218.md"},l=e("",79),h=[l];function t(p,k,d,r,E,o){return a(),i("div",null,h)}const y=s(n,[["render",t]]);export{g as __pageData,y as default};
