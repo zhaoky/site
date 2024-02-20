@@ -49,7 +49,7 @@ export const config = {
       },
       {
         text: '其他杂项',
-        link: '/misc/130',
+        link: '/misc/237',
         activeMatch: '/misc',
       },
     ],
