@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as t,U as r}from"./chunks/framework.7ZHVPoU-.js";const m=JSON.parse('{"title":"前端性能优化大纲","description":"","frontmatter":{},"headers":[],"relativePath":"exp/410.md","filePath":"exp/410.md"}'),l={name:"exp/410.md"},i=r("",7),n=[i];function o(s,c,h,d,_,f){return t(),a("div",null,n)}const u=e(l,[["render",o]]);export{m as __pageData,u as default};

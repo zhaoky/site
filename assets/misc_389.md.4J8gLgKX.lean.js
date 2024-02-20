@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as n}from"./chunks/framework.Pf98aJyB.js";const F=JSON.parse('{"title":"JS 基础：柯里化与反柯里化","description":"","frontmatter":{},"headers":[],"relativePath":"misc/389.md","filePath":"misc/389.md"}'),h={name:"misc/389.md"},k=n("",38),p=[k];function l(t,e,E,r,d,g){return a(),i("div",null,p)}const c=s(h,[["render",l]]);export{F as __pageData,c as default};

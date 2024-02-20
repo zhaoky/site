@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as c,U as d}from"./chunks/framework.Pf98aJyB.js";const u=JSON.parse('{"title":"JS 基础：遍历对象","description":"","frontmatter":{},"headers":[],"relativePath":"misc/351.md","filePath":"misc/351.md"}'),a={name:"misc/351.md"},t=d("",11),r=[t];function l(i,s,n,h,f,b){return c(),o("div",null,r)}const _=e(a,[["render",l]]);export{u as __pageData,_ as default};

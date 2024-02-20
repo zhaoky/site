@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n}from"./chunks/framework.7ZHVPoU-.js";const c=JSON.parse('{"title":"10 种常见的前端跨域解决方案（转）","description":"","frontmatter":{},"headers":[],"relativePath":"exp/391.md","filePath":"exp/391.md"}'),h={name:"exp/391.md"},l=n("",133),k=[l];function p(t,e,E,d,r,o){return a(),i("div",null,k)}const y=s(h,[["render",p]]);export{c as __pageData,y as default};
