@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,U as n,b4 as l}from"./chunks/framework.7ZHVPoU-.js";const y=JSON.parse('{"title":"JS 基础：变量声明","description":"","frontmatter":{},"headers":[],"relativePath":"misc/349.md","filePath":"misc/349.md"}'),h={name:"misc/349.md"},e=n("",33),t=[e];function k(p,d,E,o,c,r){return a(),i("div",null,t)}const F=s(h,[["render",k]]);export{y as __pageData,F as default};

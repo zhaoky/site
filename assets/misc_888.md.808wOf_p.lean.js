@@ -1,0 +1,1 @@
+import{_ as a,c as e,o,U as t}from"./chunks/framework.7ZHVPoU-.js";const u=JSON.parse('{"title":"HTTP 状态码","description":"","frontmatter":{},"headers":[],"relativePath":"misc/888.md","filePath":"misc/888.md"}'),r={name:"misc/888.md"},d=t("",95),h=[d];function l(c,i,n,s,_,p){return o(),e("div",null,h)}const q=a(r,[["render",l]]);export{u as __pageData,q as default};
