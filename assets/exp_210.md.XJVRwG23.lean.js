@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as t}from"./chunks/framework.Pf98aJyB.js";const o=JSON.parse('{"title":"CSS 实现长宽比固定的元素","description":"","frontmatter":{},"headers":[],"relativePath":"exp/210.md","filePath":"exp/210.md"}'),n={name:"exp/210.md"},h=t("",20),p=[h];function l(k,e,E,d,r,g){return a(),i("div",null,p)}const y=s(n,[["render",l]]);export{o as __pageData,y as default};

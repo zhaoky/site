@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,U as p}from"./chunks/framework.1UXudzta.js";const _=JSON.parse('{"title":"nginx 配置总结","description":"","frontmatter":{},"headers":[],"relativePath":"exp/356.md","filePath":"exp/356.md"}'),e={name:"exp/356.md"},l=p("",80),i=[l];function o(c,t,d,r,h,g){return a(),s("div",null,i)}const m=n(e,[["render",o]]);export{_ as __pageData,m as default};

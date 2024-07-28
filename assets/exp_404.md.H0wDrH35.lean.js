@@ -1,0 +1,1 @@
+import{_ as e,c as a,o,U as i}from"./chunks/framework.1UXudzta.js";const b=JSON.parse('{"title":"鉴权方案总结","description":"","frontmatter":{},"headers":[],"relativePath":"exp/404.md","filePath":"exp/404.md"}'),t={name:"exp/404.md"},s=i("",51),l=[s];function n(c,h,r,k,d,u){return o(),a("div",null,l)}const p=e(t,[["render",n]]);export{b as __pageData,p as default};

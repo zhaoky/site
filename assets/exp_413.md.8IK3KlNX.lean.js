@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as i,U as n}from"./chunks/framework.Pf98aJyB.js";const g=JSON.parse('{"title":"lerna 笔记","description":"","frontmatter":{},"headers":[],"relativePath":"exp/413.md","filePath":"exp/413.md"}'),e={name:"exp/413.md"},t=n("",17),l=[t];function p(h,k,o,d,r,E){return i(),a("div",null,l)}const u=s(e,[["render",p]]);export{g as __pageData,u as default};
