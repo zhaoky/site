@@ -1,376 +1,379 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>赵柯宇-web前端工程师简历</title>
+    <meta charset="UTF-8" />
+    <style>
+      ul,
+      li,
+      h4,
+      h5 {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+      }
 
-<head>
-	<title>赵柯宇-web前端工程师简历</title>
-	<meta charset="UTF-8">
-	<style>
-		ul,
-		li,
-		h4,
-		h5 {
-			margin: 0;
-			padding: 0;
-			font-weight: normal;
-		}
+      #content {
+        width: 800px;
+        margin: 0 auto;
+        outline: 1px solid #000;
+        font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC',
+          'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+      }
 
-		#content {
-			width: 800px;
-			margin: 0 auto;
-			outline: 1px solid #000;
-			font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-		}
+      #header {
+        height: 180px;
+        background-color: #052e5a;
+        position: relative;
+      }
 
-		#header {
-			height: 180px;
-			background-color: #052E5A;
-			position: relative;
-		}
+      #header-main {
+        height: 80px;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        background-color: #fff;
+      }
 
-		#header-main {
-			height: 80px;
-			position: absolute;
-			top: 50px;
-			width: 100%;
-			background-color: #FFF;
-		}
+      #header-name {
+        position: absolute;
+        left: 170px;
+        font-size: 24px;
+        color: #fff;
+        top: -40px;
+      }
 
-		#header-name {
-			position: absolute;
-			left: 170px;
-			font-size: 24px;
-			color: #FFF;
-			top: -40px;
-		}
+      #header-img {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        background: url('./avatar.jpg') no-repeat center center;
+        background-size: cover;
+        top: -15px;
+        left: 50px;
+      }
 
-		#header-img {
-			position: absolute;
-			width: 100px;
-			height: 100px;
-			border-radius: 50%;
-			border: 5px solid #FFF;
-			background: url("https://resume.flqin.com/assets/hd_2019.jpg") no-repeat center center;
-			background-size: cover;
-			top: -15px;
-			left: 50px;
-		}
+      #header-info {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 170px;
+        right: 0;
+      }
 
-		#header-info {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 170px;
-			right: 0;
-		}
+      #header-info ul {
+        padding: 10px 0;
+        list-style: none;
+      }
 
-		#header-info ul {
-			padding: 10px 0;
-			list-style: none;
-		}
+      #header-info ul li {
+        float: left;
+        width: 210px;
+        padding-bottom: 15px;
+        line-height: 20px;
+      }
 
-		#header-info ul li {
-			float: left;
-			width: 210px;
-			padding-bottom: 15px;
-			line-height: 20px;
-		}
+      #main {
+        padding: 0 50px;
+      }
 
-		#main {
-			padding: 0 50px;
-		}
+      #evaluation {
+        text-align: center;
+        padding: 20px 0 30px;
+      }
 
-		#evaluation {
-			text-align: center;
-			padding: 20px 0 30px;
-		}
+      h4 {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        color: #052e5a;
+      }
 
-		h4 {
-			font-weight: bold;
-			font-size: 16px;
-			line-height: 20px;
-			color: #052E5A;
-		}
+      h5 {
+        color: #999;
+      }
 
-		h5 {
-			color: #999;
-		}
+      #des-cn {
+        padding: 10px 0;
+        font-size: 14px;
+        line-height: 22px;
+      }
 
-		#des-cn {
-			padding: 10px 0;
-			font-size: 14px;
-			line-height: 22px;
-		}
+      #des-en {
+        padding: 10px 0;
+        font-size: 12px;
+      }
 
-		#des-en {
-			padding: 10px 0;
-			font-size: 12px;
-		}
+      .exp {
+        overflow: hidden;
+        font-size: 14px;
+      }
 
-		.exp {
-			overflow: hidden;
-			font-size: 14px;
-		}
+      .exp-cn {
+        float: left;
+        width: 330px;
+        position: relative;
+      }
 
-		.exp-cn {
-			float: left;
-			width: 330px;
-			position: relative;
-		}
+      .exp-en {
+        float: right;
+        width: 340px;
+      }
 
-		.exp-en {
-			float: right;
-			width: 340px;
-		}
+      .exp-list {
+        list-style: none;
+      }
 
-		.exp-list {
-			list-style: none;
-		}
+      .exp-item {
+        padding-bottom: 10px;
+        box-sizing: border-box;
+      }
 
-		.exp-item {
-			padding-bottom: 10px;
-			box-sizing: border-box;
-		}
+      .-jumei {
+        height: 212px;
+      }
 
-		.-jumei {
-			height: 212px;
-		}
+      .-lantu {
+        height: 152px;
+      }
 
-		.-lantu {
-			height: 152px;
-		}
+      .-zhuo {
+        height: 152px;
+      }
 
-		.-zhuo {
-			height: 152px;
-		}
+      .exp-cn::after {
+        content: '';
+        position: absolute;
+        top: 25px;
+        bottom: 20px;
+        width: 1px;
+        background-color: rgba(0, 0, 0, 0.2);
+        right: -13px;
+      }
 
-		.exp-cn::after {
-			content: "";
-			position: absolute;
-			top: 25px;
-			bottom: 20px;
-			width: 1px;
-			background-color: rgba(0, 0, 0, 0.2);
-			right: -13px;
-		}
+      .exp-info {
+        margin: 5px 0;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 20px;
+      }
 
-		.exp-info {
-			margin: 5px 0;
-			overflow: hidden;
-			font-size: 12px;
-			line-height: 20px;
-		}
+      .exp-info span:first-child {
+        float: left;
+      }
 
-		.exp-info span:first-child {
-			float: left;
-		}
+      .exp-info span:last-child {
+        float: right;
+      }
 
-		.exp-info span:last-child {
-			float: right;
-		}
+      .exp-post {
+        padding-bottom: 5px;
+        font-weight: bold;
+        line-height: 20px;
+      }
 
-		.exp-post {
-			padding-bottom: 5px;
-			font-weight: bold;
-			line-height: 20px;
-		}
+      .exp-des {
+        color: #666;
+        font-size: 12px;
+        line-height: 20px;
+      }
 
-		.exp-des {
-			color: #666;
-			font-size: 12px;
-			line-height: 20px;
-		}
+      .exp-achList {
+        line-height: 20px;
+        font-size: 12px;
+        color: #666;
+        padding: 6px 0 6px 20px;
+      }
 
-		.exp-achList {
-			line-height: 20px;
-			font-size: 12px;
-			color: #666;
-			padding: 6px 0 6px 20px;
-		}
+      .exp-cn .exp-achList li {
+        padding-bottom: 6px;
+      }
 
-		.exp-cn .exp-achList li {
-			padding-bottom: 6px;
-		}
+      .exp-cn .exp-achList {
+        font-size: 13px;
+      }
 
-		.exp-cn .exp-achList {
-			font-size: 13px;
-		}
+      .edu {
+        padding-bottom: 10px;
+      }
 
-		.edu {
-			padding-bottom: 10px;
-		}
+      #footer {
+        display: flex;
+        background-color: #052e5a;
+        color: #fff;
+        padding: 0 50px;
+      }
 
+      #footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
 
-		#footer {
-			display: flex;
-			background-color: #052E5A;
-			color: #FFF;
-			padding: 0 50px;
-		}
+  <body>
+    <div id="content">
+      <div id="header">
+        <div id="header-main">
+          <div id="header-name">
+            赵柯宇
+            <span>Korey Zhao</span>
+          </div>
+          <div id="header-img"></div>
+          <div id="header-info">
+            <ul>
+              <li>高级前端/前端负责人(FE.M)</li>
+              <li>32岁(32 years old)</li>
+              <li>9年经验(9 years+)</li>
+              <li>四川·成都(SC·ChengDu)</li>
+              <li>keyu.zhao@foxmail.com</li>
+              <li>13730846784</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-		#footer a {
-			color: #FFF;
-			text-decoration: none;
-		}
-	</style>
-</head>
+      <div id="main">
+        <div id="evaluation">
+          <h4>自我评价</h4>
+          <h5>SELF-EVALUATION</h5>
+          <div id="des-cn">
+            六年开发经验，前端技术栈均有所涉猎。目前负责聚美优品电商、增长业务的前端团队，从独立模块开发、工程构建到团队管理都有一定的经验。自建技术博客，实现过一个基于
+            proxy 的 MVVM 框架，并在掘金（ID:korey）上发表过 webpack 源码和 vue
+            源码分析系列等前端技术文章，希望为社区做一些微小的贡献。
+          </div>
+          <div id="des-en">
+            Six years of development experience, understand all FE technology stacks.Head of the FE team of Jumei
+            e-commerce and growth. Have certain experience in independent module development, project construction and
+            team management. Created a technical blog and a MVVM framework based on proxy, and published FE technical
+            articles such as webpack and vue source code analysis series on JueJin (ID:korey), hope to make some small
+            contributions to the community.
+          </div>
+        </div>
+        <div class="exp">
+          <div class="exp-cn">
+            <h4>工作经验</h4>
+            <ul class="exp-list">
+              <li class="exp-item -jumei">
+                <div class="exp-info">
+                  <span>2017.04 - 至今</span>
+                  <span>聚美优品·成都</span>
+                </div>
+                <div class="exp-post">高级前端/前端负责人</div>
+                <ul class="exp-achList">
+                  <li>高级前端，后晋升为电商、增长团队前端负责人</li>
+                  <li>负责架构底层及业务开发，提出技术解决方案</li>
+                  <li>上线项目包括街电H5/小程序/CRM，美点H5，聚美优品/鹿尚生活/白金大脑小程序，增长H5，刷宝H5等</li>
+                  <li>技术栈涉及Vue，React，Electron，Webpack，小程序，快应用等</li>
+                </ul>
+              </li>
+              <li class="exp-item -lantu">
+                <div class="exp-info">
+                  <span>2015.06 - 2017.04</span>
+                  <span>兰途科技</span>
+                </div>
+                <div class="exp-post">高级前端研发工程师</div>
+                <ul class="exp-achList">
+                  <li>负责快速构建高质量移动APP/PC/H5页面</li>
+                  <li>高度组件化、模块化思维，拥有各平台调试能力</li>
+                  <li>技术栈涉及Angular，Vue，Cordova，Gulp等</li>
+                </ul>
+              </li>
+              <li class="exp-item -zhuo">
+                <div class="exp-info">
+                  <span>2014.08 - 2015.06</span>
+                  <span>卓煌企业</span>
+                </div>
+                <div class="exp-post">前端研发工程师</div>
+                <ul class="exp-achList">
+                  <li>负责企业站静态页开发及后台维护</li>
+                  <li>负责百度竞价操作及SEO优化</li>
+                  <li>技术栈涉及jQuery等</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="exp-en">
+            <h4>WORK EXPERIENCE</h4>
+            <ul class="exp-list">
+              <li class="exp-item">
+                <div class="exp-info">
+                  <span>2017.04 - now</span>
+                  <span>JUMEI</span>
+                </div>
+                <div class="exp-post">FE.TL</div>
+                <ul class="exp-achList">
+                  <li>Senior FE, promoted to TL of e-commerce and growth</li>
+                  <li>Support architecture and business development, propose solutions</li>
+                  <li>
+                    Online includes Jiedian H5/ MiniP / CRM, Meidian H5, Jumei/Lushang/Brain MiniP, Growth H5, ShuaBao
+                    H5, etc
+                  </li>
+                  <li>Technology stack includes Vue, React, Electron, Webpack, Mini program, Quickapp, etc</li>
+                </ul>
+              </li>
+              <li class="exp-item">
+                <div class="exp-info">
+                  <span>2015.06 - 2017.04</span>
+                  <span>LANTU TECH</span>
+                </div>
+                <div class="exp-post">Senior FE.D engineers</div>
+                <ul class="exp-achList">
+                  <li>Responsible for developing APP/ PC/ H5 pages</li>
+                  <li>Componentization and modularization, debugging capabilities of each platform</li>
+                  <li>Technology stack includes Angular, Vue, Cordova, Gulp, etc</li>
+                </ul>
+              </li>
+              <li class="exp-item">
+                <div class="exp-info">
+                  <span>2014.08 - 2015.06</span>
+                  <span>ZHUO HUANG</span>
+                </div>
+                <div class="exp-post">Web front end development</div>
+                <ul class="exp-achList">
+                  <li>Responsible for enterprise static page development & maintenance</li>
+                  <li>Responsible for Baidu bid operation and SEO optimization</li>
+                  <li>Technology stack includes jQuery, etc</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp edu">
+          <div class="exp-cn">
+            <h4>教育背景</h4>
+            <ul class="exp-list">
+              <li class="exp-item">
+                <div class="exp-info">
+                  <span>2010.09 - 2014.06</span>
+                  <span>四川工商学院（本科）</span>
+                </div>
+                <div class="exp-post">电子信息工程</div>
+                <div class="exp-des">主修课程：数电，模电，单片机，嵌入式，C语言等等。</div>
+              </li>
+            </ul>
+          </div>
+          <div class="exp-en">
+            <h4>EDUCATION</h4>
+            <ul class="exp-list">
+              <li class="exp-item">
+                <div class="exp-info">
+                  <span>2010.09 - 2014.06</span>
+                  <span>STBU（B.S.）</span>
+                </div>
+                <div class="exp-post">Electronic Information Engineering</div>
+                <div class="exp-des">Major: digital, analog, single-chip, embedded, C language, etc.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-<body>
-	<div id="content">
-		<div id="header">
-			<div id="header-main">
-				<div id="header-name">
-					赵柯宇
-					<span>Korey Zhao</span>
-				</div>
-				<div id="header-img"></div>
-				<div id="header-info">
-					<ul>
-						<li>高级前端/前端负责人(FE.M)</li>
-						<li>29岁(29 years old)</li>
-						<li>6年经验(6 years+)</li>
-						<li>四川·成都(SC·ChengDu)</li>
-						<li>keyu.zhao@foxmail.com</li>
-						<li>13730846784</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div id="main">
-			<div id="evaluation">
-				<h4>自我评价</h4>
-				<h5>SELF-EVALUATION</h5>
-				<div id="des-cn">
-					六年开发经验，前端技术栈均有所涉猎。目前负责聚美优品电商、增长业务的前端团队，从独立模块开发、工程构建到团队管理都有一定的经验。自建技术博客，实现过一个基于 proxy 的 MVVM 框架，并在掘金（ID:korey）上发表过 webpack 源码和 vue 源码分析系列等前端技术文章，希望为社区做一些微小的贡献。
-				</div>
-				<div id="des-en">
-					Six years of development experience, understand all FE technology stacks.Head of the FE team of Jumei e-commerce and growth. Have certain experience in independent module development, project construction and team management. Created a technical blog and a MVVM framework based on proxy, and published FE technical articles such as webpack and vue source code analysis series on JueJin (ID:korey), hope to make some small contributions to the community.
-				</div>
-			</div>
-			<div class="exp">
-				<div class="exp-cn">
-					<h4>工作经验</h4>
-					<ul class="exp-list">
-						<li class="exp-item -jumei">
-							<div class="exp-info">
-								<span>2017.04 - 至今</span>
-								<span>聚美优品·成都</span>
-							</div>
-							<div class="exp-post">高级前端/前端负责人</div>
-							<ul class="exp-achList">
-								<li>高级前端，后晋升为电商、增长团队前端负责人</li>
-								<li>负责架构底层及业务开发，提出技术解决方案</li>
-								<li>上线项目包括街电H5/小程序/CRM，美点H5，聚美优品/鹿尚生活/白金大脑小程序，增长H5，刷宝H5等</li>
-								<li>技术栈涉及Vue，React，Electron，Webpack，小程序，快应用等</li>
-							</ul>
-						</li>
-						<li class="exp-item -lantu">
-							<div class="exp-info">
-								<span>2015.06 - 2017.04</span>
-								<span>兰途科技</span>
-							</div>
-							<div class="exp-post">高级前端研发工程师</div>
-							<ul class="exp-achList">
-								<li>负责快速构建高质量移动APP/PC/H5页面</li>
-								<li>高度组件化、模块化思维，拥有各平台调试能力</li>
-								<li>技术栈涉及Angular，Vue，Cordova，Gulp等</li>
-							</ul>
-						</li>
-						<li class="exp-item -zhuo">
-							<div class="exp-info">
-								<span>2014.08 - 2015.06</span>
-								<span>卓煌企业</span>
-							</div>
-							<div class="exp-post">前端研发工程师</div>
-							<ul class="exp-achList">
-								<li>负责企业站静态页开发及后台维护</li>
-								<li>负责百度竞价操作及SEO优化</li>
-								<li>技术栈涉及jQuery等</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div class="exp-en">
-					<h4>WORK EXPERIENCE</h4>
-					<ul class="exp-list">
-						<li class="exp-item">
-							<div class="exp-info">
-								<span>2017.04 - now</span>
-								<span>JUMEI</span>
-							</div>
-							<div class="exp-post">FE.TL</div>
-							<ul class="exp-achList">
-								<li>Senior FE, promoted to TL of e-commerce and growth </li>
-								<li>Support architecture and business development, propose solutions</li>
-								<li>Online includes Jiedian H5/ MiniP / CRM, Meidian H5, Jumei/Lushang/Brain MiniP, Growth H5, ShuaBao H5, etc</li>
-								<li>Technology stack includes Vue, React, Electron, Webpack, Mini program, Quickapp, etc</li>
-							</ul>
-						</li>
-						<li class="exp-item">
-							<div class="exp-info">
-								<span>2015.06 - 2017.04</span>
-								<span>LANTU TECH</span>
-							</div>
-							<div class="exp-post">Senior FE.D engineers</div>
-							<ul class="exp-achList">
-								<li>Responsible for developing APP/ PC/ H5 pages</li>
-								<li>Componentization and modularization, debugging capabilities of each platform</li>
-								<li>Technology stack includes Angular, Vue, Cordova, Gulp, etc</li>
-							</ul>
-						</li>
-						<li class="exp-item">
-							<div class="exp-info">
-								<span>2014.08 - 2015.06</span>
-								<span>ZHUO HUANG</span>
-							</div>
-							<div class="exp-post">Web front end development</div>
-							<ul class="exp-achList">
-								<li>Responsible for enterprise static page development & maintenance</li>
-								<li>Responsible for Baidu bid operation and SEO optimization</li>
-								<li>Technology stack includes jQuery, etc</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="exp edu">
-				<div class="exp-cn">
-					<h4>教育背景</h4>
-					<ul class="exp-list">
-						<li class="exp-item">
-							<div class="exp-info">
-								<span>2010.09 - 2014.06</span>
-								<span>四川工商学院（本科）</span>
-							</div>
-							<div class="exp-post">电子信息工程</div>
-							<div class="exp-des">
-								主修课程：数电，模电，单片机，嵌入式，C语言等等。
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="exp-en">
-					<h4>EDUCATION</h4>
-					<ul class="exp-list">
-						<li class="exp-item">
-							<div class="exp-info">
-								<span>2010.09 - 2014.06</span>
-								<span>STBU（B.S.）</span>
-							</div>
-							<div class="exp-post">Electronic Information Engineering</div>
-							<div class="exp-des">
-								Major: digital, analog, single-chip, embedded, C language, etc.
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div id="footer">
-			<p>感谢您的阅读。了解更多：<a href="https://flqin.com">https://flqin.com</a></p>
-		</div>
-	</div>
-</body>
-
+      <div id="footer">
+        <p>感谢您的阅读。了解更多：<a href="https://flqin.com">https://flqin.com</a></p>
+      </div>
+    </div>
+  </body>
 </html>
