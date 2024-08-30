@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,U as n}from"./chunks/framework.1UXudzta.js";const F=JSON.parse('{"title":"JS 基础：设计模式","description":"","frontmatter":{},"headers":[],"relativePath":"misc/406.md","filePath":"misc/406.md"}'),h={name:"misc/406.md"},l=n("",112),k=[l];function p(t,E,e,r,d,g){return a(),i("div",null,k)}const c=s(h,[["render",p]]);export{F as __pageData,c as default};
