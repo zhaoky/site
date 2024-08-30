@@ -24,7 +24,9 @@ export const sidebarRouter = {
     'vue 2': 'vue2',
   },
   exp: {
-    经验沉淀: 'index',
+    方案沉淀: 'javascript',
+    css: 'css',
+    misc: 'misc',
   },
   misc: {
     其他杂项: 'index',

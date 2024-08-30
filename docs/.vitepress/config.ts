@@ -29,8 +29,23 @@ export const config = {
       },
       {
         text: '经验沉淀',
-        link: '/exp/186',
-        activeMatch: '/exp',
+        items: [
+          {
+            text: 'javascript',
+            link: '/exp/javascript/101',
+            activeMatch: '/exp/javascipt',
+          },
+          {
+            text: 'css',
+            link: '/exp/css/186',
+            activeMatch: '/exp/css',
+          },
+          {
+            text: 'misc',
+            link: '/exp/misc/237',
+            activeMatch: '/exp/misc',
+          },
+        ],
       },
       {
         text: '源码系列',
