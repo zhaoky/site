@@ -42,7 +42,7 @@ export const config = {
           },
           {
             text: 'misc',
-            link: '/exp/misc/237',
+            link: '/exp/misc/336',
             activeMatch: '/exp/misc',
           },
         ],
@@ -64,7 +64,7 @@ export const config = {
       },
       {
         text: '其他杂项',
-        link: '/misc/336',
+        link: '/misc/237',
         activeMatch: '/misc',
       },
     ],
