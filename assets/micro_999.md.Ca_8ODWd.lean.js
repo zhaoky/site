@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as a,U as t}from"./chunks/framework.V_NCB61V.js";const d=JSON.parse('{"title":"微前端","description":"","frontmatter":{},"headers":[],"relativePath":"micro/999.md","filePath":"micro/999.md"}'),i={name:"micro/999.md"},l=t("",5),o=[l];function n(_,c,s,h,p,m){return a(),r("div",null,o)}const f=e(i,[["render",n]]);export{d as __pageData,f as default};
