@@ -63,6 +63,6 @@ jobs:
           ARGS: "-rlgoDzvc -i"
           SOURCE: ./docs/.vitepress/dist ./demo ./configs/docker-compose.yml ./configs/Dockerfile_blog ./configs/Dockerfile_demo ./configs/Dockerfile_resume ./configs/nginx_blog.conf ./configs/nginx_demo.conf ./configs/nginx_resume.conf
           REMOTE_HOST: ${{ secrets.HOST_IP_ADDR }}
-          REMOTE_USER: ${{ secrets.HOST_DEPLOY_USER }}
+          REMOTE_USER: root
           TARGET: ${{ secrets.HOST_DEPLOY_PATH }}
           EXCLUDE: /node_modules/
