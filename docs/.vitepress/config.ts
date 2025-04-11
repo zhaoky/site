@@ -67,6 +67,11 @@ export const config = {
         link: '/misc/237',
         activeMatch: '/misc',
       },
+      {
+        text: '更多',
+        link: '/links/index',
+        activeMatch: '/links',
+      },
     ],
     search,
     sidebar: getSidebar(),
