@@ -5,7 +5,7 @@ layout: home
 hero:
   name: '前端轻语'
   text: ''
-  tagline: korey的原创文章集，并用于记录随身心得，即时所想
+  tagline: korey的原创文章集，并用于记录随身心得，即时所想~
   image:
     src: /base/logo.png
   actions:
