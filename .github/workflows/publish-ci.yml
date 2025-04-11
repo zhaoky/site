@@ -60,7 +60,7 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
-          ARGS: -avzr --delete
+          ARGS: "-rlgoDzvc -i"
           SOURCE: ./docs/.vitepress/dist ./demo ./configs/docker-compose.yml ./configs/Dockerfile_blog ./configs/Dockerfile_demo ./configs/Dockerfile_resume ./configs/nginx_blog.conf ./configs/nginx_demo.conf ./configs/nginx_resume.conf
           REMOTE_HOST: ${{ secrets.HOST_IP_ADDR }}
           REMOTE_USER: ${{ secrets.HOST_DEPLOY_USER }}
