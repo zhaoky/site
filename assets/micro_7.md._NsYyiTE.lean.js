@@ -1,1 +1,0 @@
-import{_ as i,c as a,o as l,U as e}from"./chunks/framework.V_NCB61V.js";const _=JSON.parse('{"title":"微前端方案对比","description":"","frontmatter":{},"headers":[],"relativePath":"micro/7.md","filePath":"micro/7.md"}'),o={name:"micro/7.md"},n=e("",23),t=[n];function p(r,s,c,d,m,h){return l(),a("div",null,t)}const k=i(o,[["render",p]]);export{_ as __pageData,k as default};

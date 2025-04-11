@@ -1,1 +1,0 @@
-import{_ as e,c as i,o as s,U as t}from"./chunks/framework.V_NCB61V.js";const g=JSON.parse('{"title":"single-spa 与 qiankun","description":"","frontmatter":{},"headers":[],"relativePath":"micro/5.md","filePath":"micro/5.md"}'),l={name:"micro/5.md"},a=t("",6),n=[a];function p(r,o,c,_,m,d){return s(),i("div",null,n)}const h=e(l,[["render",p]]);export{g as __pageData,h as default};
