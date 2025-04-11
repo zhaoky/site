@@ -18,18 +18,18 @@ hero:
 
 features:
   - icon:
+      src: /base/insight.svg
+      width: 10
+      height: 10
+    title: AI
+    details: aigc mcp
+
+  - icon:
       src: /base/focus.svg
       width: 10
       height: 10
     title: 微前端
     details: single-spa qiankun wujie micro-app
-
-  - icon:
-      src: /base/insight.svg
-      width: 10
-      height: 10
-    title: 经验沉淀
-    details: css js misc
 
   - icon:
       src: /base/knowledge.svg
