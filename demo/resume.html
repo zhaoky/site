@@ -5,466 +5,312 @@
   <title>赵柯宇-前端工程师简历</title>
   <meta charset="UTF-8" />
   <style>
-    ul,
-    li,
-    h4,
-    h5 {
-      margin: 0;
-      padding: 0;
-      font-weight: normal;
+    :root {
+      --main-color: #052e5a;
     }
 
-    #content {
+    .content {
       width: 800px;
       margin: 0 auto;
       border: 1px solid #000;
       font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC',
         'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-    }
 
-    #header {
-      height: 180px;
-      background-color: #052e5a;
-      position: relative;
-    }
+      .header {
+        height: 180px;
+        background-color: #052e5a;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
-    #header-main {
-      height: 80px;
-      position: absolute;
-      top: 50px;
-      width: 100%;
-      background-color: #fff;
-    }
+        .header-name {
+          position: absolute;
+          left: 170px;
+          font-size: 24px;
+          color: #fff;
+          top: 8px;
 
-    #header-name {
-      position: absolute;
-      left: 170px;
-      font-size: 24px;
-      color: #fff;
-      top: -40px;
-    }
+          .header-status {
+            font-size: 14px;
+            color: #eee;
+          }
+        }
 
-    #header-img {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      background: url('./avatar.jpg') no-repeat center center;
-      background-size: cover;
-      top: -15px;
-      left: 50px;
-    }
+        .header-main {
+          height: 80px;
+          width: 100%;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
 
-    #header-info {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 170px;
-      right: 0;
-    }
+          .header-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #385078;
+            background: url('./avatar.jpg') no-repeat center center;
+            background-size: cover;
+            margin-left: 50px;
+          }
 
-    #header-info ul {
-      padding: 10px 0;
-      list-style: none;
-    }
+          .header-info {
+            margin-left: 16px;
+            line-height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+          }
 
-    #header-info ul li {
-      float: left;
-      width: 210px;
-      padding-bottom: 15px;
-      line-height: 20px;
-    }
+          .header-wxcode {
+            margin-left: 80px;
+            font-size: 8px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2px;
 
-    #main {
-      padding: 0 50px;
-    }
+            .img {
+              width: 60px;
+              height: 60px;
+              background: url('./wxcode.png') no-repeat center center;
+              background-size: cover;
+            }
+          }
 
-    #evaluation {
-      text-align: center;
-      padding: 20px 0 30px;
-    }
+          .header-qrcode {
+            margin-left: 20px;
+            font-size: 8px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2px;
 
-    h4 {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 20px;
-      color: #052e5a;
-    }
+            .img {
+              width: 60px;
+              height: 60px;
+              background: url('./qrcode.png') no-repeat center center;
+              background-size: cover;
+            }
+          }
+        }
+      }
 
-    h5 {
-      color: #999;
-    }
+      .main {
+        padding: 0 50px;
 
-    #des-cn {
-      padding: 10px 0;
-      font-size: 14px;
-      line-height: 22px;
-    }
 
-    #des-en {
-      padding: 10px 0;
-      font-size: 12px;
-    }
+        h4 {
+          margin: 0;
+          padding: 0;
+          font-weight: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 20px;
+          color: #052e5a;
+        }
 
-    .exp {
-      overflow: hidden;
-      font-size: 14px;
-    }
+        .evaluation {
+          text-align: center;
+          padding: 20px 0 10px;
 
-    .exp-cn {
-      float: left;
-      width: 330px;
-      position: relative;
-    }
+          .des {
+            padding: 10px 0;
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
 
-    .exp-en {
-      float: right;
-      width: 340px;
-    }
+        .exp {
+          overflow: hidden;
+          font-size: 14px;
 
-    .exp-list {
-      list-style: none;
-    }
+          .exp-list {
+            margin-top: 10px;
 
-    .exp-item {
-      padding-bottom: 10px;
-      box-sizing: border-box;
-    }
+            .exp-item {
+              padding-bottom: 10px;
+              box-sizing: border-box;
 
-    .-tencent {
-      height: 192px;
-    }
+              .exp-header {
+                padding-bottom: 5px;
+                font-weight: bold;
+                line-height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
 
-    .-jumei {
-      height: 172px;
-    }
+                .exp-title {
+                  margin-left: 20px;
+                  font-weight: normal;
+                }
 
-    .-lantu {
-      height: 132px;
-    }
+                .exp-date {
+                  font-weight: normal;
+                  font-size: 14px;
+                }
+              }
 
-    .-zhuo {
-      height: 132px;
-    }
+              .exp-achList {
+                line-height: 20px;
+                font-size: 12px;
+                color: #666;
+                padding: 6px 0 6px 0px;
+              }
+            }
+          }
+        }
+      }
 
-    .exp-cn::after {
-      content: '';
-      position: absolute;
-      top: 25px;
-      bottom: 20px;
-      width: 1px;
-      background-color: rgba(0, 0, 0, 0.2);
-      right: -13px;
-    }
+      .footer {
+        display: flex;
+        background-color: #052e5a;
+        color: #fff;
+        padding: 0 50px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
 
-    .exp-info {
-      margin: 5px 0;
-      overflow: hidden;
-      font-size: 12px;
-      line-height: 20px;
-    }
+        .qrcode-list {
+          display: flex;
+          gap: 20px;
 
-    .exp-info span:first-child {
-      float: left;
-    }
+          .img {
+            width: 40px;
+            height: 40px;
+            background: no-repeat center center;
+            background-size: cover;
+          }
 
-    .exp-info span:last-child {
-      float: right;
-    }
+          .blog {
+            background-image: url('./blog.png');
+          }
 
-    .exp-post {
-      padding-bottom: 5px;
-      font-weight: bold;
-      line-height: 20px;
-    }
+          .github {
+            background-image: url('./github.png');
+          }
 
-    .exp-des {
-      color: #666;
-      font-size: 12px;
-      line-height: 20px;
-    }
+          .zhihu {
+            background-image: url('./zhihu.png');
+          }
 
-    .exp-achList {
-      line-height: 20px;
-      font-size: 12px;
-      color: #666;
-      padding: 6px 0 6px 20px;
-    }
-
-    .exp-cn .exp-achList li {
-      padding-bottom: 6px;
-    }
-
-    .exp-cn .exp-achList {
-      font-size: 13px;
-    }
-
-    .edu {
-      padding-bottom: 10px;
-    }
-
-    .project {
-      padding: 25px 0;
-      position: relative;
-    }
-
-    /* .project::before {
-      position: absolute;
-      top: 0;
-      left: 100px;
-      right: 100px;
-      content: '';
-      background: rgba(0, 0, 0, 0.2);
-      height: 1px;
-    } */
-
-    .project .exp-item {
-      padding-top: 10px;
-    }
-
-    .project .exp-post {
-      font-size: 13px;
-    }
-    .project .exp-post .date{
-      font-weight: normal;
-    }
-
-    #footer {
-      display: flex;
-      background-color: #052e5a;
-      color: #fff;
-      padding: 0 50px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    #footer a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    #footer .qrcode {
-      width: 40px;
-      height: 40px;
-      background: url('./qrcode.png') no-repeat center center;
-      background-size: cover;
+          .juejin {
+            background-image: url('./juejin.png');
+          }
+        }
+      }
     }
   </style>
 </head>
 
 <body>
-  <div id="content">
-    <div id="header">
-      <div id="header-main">
-        <div id="header-name">
-          赵柯宇
-          <span>Korey Zhao</span>
+  <div class="content">
+    <div class="header">
+      <div class="header-name">
+        赵柯宇 Korey Zhao
+        <span class="header-status">（在职，月内到岗）</span>
+      </div>
+      <div class="header-main">
+        <div class="header-img"></div>
+        <div class="header-info">
+          <div>前端资深·前端架构·前端leader&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10年经验+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本科</div>
+          <div>四川·成都&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13730846784&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyu.zhao@foxmail.com</div>
         </div>
-        <div id="header-img"></div>
-        <div id="header-info">
-          <ul>
-            <li>高级前端/前端负责人(FE.M)</li>
-            <li>33岁(33 years old)</li>
-            <li>10年经验(10 years)</li>
-            <li>四川·成都(SC·ChengDu)</li>
-            <li>keyu.zhao@foxmail.com</li>
-            <li>13730846784</li>
-          </ul>
+        <div class="header-wxcode">
+          <div class="img"></div>
+          <div>微信</div>
+        </div>
+        <div class="header-qrcode">
+          <div class="img"></div>
+          <div>博客</div>
         </div>
       </div>
     </div>
 
-    <div id="main">
-      <div id="evaluation">
+    <div class="main">
+      <div class="evaluation">
         <h4>自我介绍</h4>
-        <h5>SELF-INTRODUCTION</h5>
-        <div id="des-cn">
-          十年开发背景，前端主流技术栈均有丰富实战经验。现腾讯高级前端工程师，曾负责过聚美优品电商、增长业务的前端团队，从独立模块，组件库开发、工程构建部署到团队管理都有一定的经验。热爱分享，自建技术博客，曾写过webpack4源码系列等前端技术文章，也动手实现过MVVM框架。对新技术敏感，微前端领域、前端架构及基建优化领域探索者。
-        </div>
-
-        <div id="des-en">
-          With a decade of development experience, I have extensive hands-on expertise in mainstream front-end technology stacks. Currently a Senior Front-end Engineer at Tencent, I previously led the front-end team for Jumei's e-commerce and growth business. I have substantial experience in independent module development, component library creation, engineering build and deployment, as well as team management. Passionate about sharing knowledge, I maintain a personal tech blog where I have published articles on front-end technologies such as  Webpack 4 source code analysis. I have also implemented an MVVM framework. Sensitivity to new technologies，I am an explorer in the fields of micro-frontends and architecture optimization.
+        <div class="des">
+          深耕互联网多年，以前端为核心，兼具全栈能力。曾在创业团队、中型公司、BAT大厂等不同规模企业任职，具备卓越的韧性、沟通及协作能力。在教育、电商、大数据、医疗AIGC等不同赛道积累了多元化行业经验，成功推动了多项降本提效方案及基建平台工具创新落地。以质效为导向，结果为目标，从多端业务快速交付、大型项目重构、工程架构设计到团队管理都有丰富实操能力。持续学习拥抱变化，对行业新技术敏感，AI赋能前端探索者。
         </div>
       </div>
       <div class="exp">
-        <div class="exp-cn">
-          <h4>工作经验</h4>
-          <ul class="exp-list">
-            <li class="exp-item -tencent">
-              <div class="exp-info">
-                <span>2021.04 - 至今</span>
-                <span>腾讯</span>
-              </div>
-              <div class="exp-post">高级前端工程师</div>
-              <ul class="exp-achList">
-                <li>腾讯优码平台业务核心开发及交付</li>
-                <li>腾讯优码数字藏品营销平台前端负责人</li>
-                <li>腾讯优码交付子包框架及工程化实现</li>
-                <li>腾讯营销云业务开发及企点组件库沉淀和管理</li>
-              </ul>
-            </li>
-            <li class="exp-item -jumei">
-              <div class="exp-info">
-                <span>2017.04 - 2021.04</span>
-                <span>聚美优品</span>
-              </div>
-              <div class="exp-post">高级前端/前端负责人</div>
-              <ul class="exp-achList">
-                <li>高级前端，后晋升为电商、增长团队前端负责人</li>
-                <li>负责架构底层及业务开发，提出技术解决方案</li>
-                <li>上线项目包括街电H5/小程序/CRM，美点H5，聚美优品/鹿尚生活/白金大脑小程序，增长H5，刷宝H5等</li>
-              </ul>
-            </li>
-            <li class="exp-item -lantu">
-              <div class="exp-info">
-                <span>2015.06 - 2017.04</span>
-                <span>兰途科技</span>
-              </div>
-              <div class="exp-post">前端工程师</div>
-              <ul class="exp-achList">
-                <li>负责快速构建高质量移动APP/PC/H5页面</li>
-                <li>高度组件化、模块化思维，拥有各平台调试能力</li>
-              </ul>
-            </li>
-            <li class="exp-item -zhuo">
-              <div class="exp-info">
-                <span>2014.08 - 2015.06</span>
-                <span>卓煌</span>
-              </div>
-              <div class="exp-post">前端工程师</div>
-              <ul class="exp-achList">
-                <li>负责企业站静态页开发及后台维护等</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="exp-en">
-          <h4>WORK EXPERIENCE</h4>
-          <ul class="exp-list">
-            <li class="exp-item">
-              <div class="exp-info">
-                <span>2021.04 - now</span>
-                <span>Tencent</span>
-              </div>
-              <div class="exp-post">Senior FE.D</div>
-              <ul class="exp-achList">
-                <li>Core Developer and Deliverer for UMA Marketing Business</li>
-                <li>Owner for Tencent UMA digital collection</li>
-                <li>Framework and Engineering Implementation for UMA Delivery Sub-packages</li>
-                <li>Support for Tencent Marketing Cloud and Management of QD Component lib</li>
-              </ul>
-            </li>
-            <li class="exp-item">
-              <div class="exp-info">
-                <span>2017.04 - 2021.04</span>
-                <span>Jumei</span>
-              </div>
-              <div class="exp-post">FE.TL</div>
-              <ul class="exp-achList">
-                <li>Senior FE, promoted to TL of e-commerce and growth</li>
-                <li>Support architecture and business development, propose solutions</li>
-                <li>
-                  Online includes Jiedian H5/ MiniP / CRM, Meidian H5, Jumei/Lushang/Brain MiniP, Growth H5, ShuaBao
-                  H5, etc
-                </li>
-              </ul>
-            </li>
-            <li class="exp-item">
-              <div class="exp-info">
-                <span>2015.06 - 2017.04</span>
-                <span>LANTU TECH</span>
-              </div>
-              <div class="exp-post">FE.D</div>
-              <ul class="exp-achList">
-                <li>Responsible for developing APP/ PC/ H5 pages</li>
-                <li>Componentization and modularization, debugging capabilities of each platform</li>
-              </ul>
-            </li>
-            <li class="exp-item">
-              <div class="exp-info">
-                <span>2014.08 - 2015.06</span>
-                <span>ZHUO HUANG</span>
-              </div>
-              <div class="exp-post">FE.D</div>
-              <ul class="exp-achList">
-                <li>Responsible for enterprise static page development & maintenance</li>
-              </ul>
-            </li>
-          </ul>
+        <h4>工作经验</h4>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>润达集团·惠灏AI智医<span class="exp-title">前端架构师</span></div>
+              <div class="exp-date">2024.09 - 至今</div>
+            </div>
+            <div class="exp-achList">
+              <div>1.负责良医业务线</div>
+              <div>2.腾讯优码数字藏品营销平台前端负责人</div>
+              <div>3.腾讯优码交付子包框架及工程化实现</div>
+              <div>4.腾讯营销云业务开发及企点组件库沉淀和管理</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>腾讯·企点产品部<span class="exp-title">资深前端工程师</span></div>
+              <div class="exp-date">2021.04 - 2024.09</div>
+            </div>
+            <div class="exp-achList">
+              <div>1.腾讯优码平台业务核心开发及交付</div>
+              <div>2.腾讯优码数字藏品营销平台前端负责人</div>
+              <div>3.腾讯优码交付子包框架及工程化实现</div>
+              <div>4.腾讯营销云业务开发及企点组件库沉淀和管理</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>聚美集团·产品研发部<span class="exp-title">前端架构师·前端leader</span></div>
+              <div class="exp-date">2017.04 - 2021.04</div>
+            </div>
+            <div class="exp-achList">
+              <div>高级前端，后晋升为电商、增长团队前端负责人</div>
+              <div>负责架构底层及业务开发，提出技术解决方案</div>
+              <div>上线项目包括街电H5/小程序/CRM，美点H5，聚美优品/鹿尚生活/白金大脑小程序，增长H5，刷宝H5等</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>兰途科技·研发部<span class="exp-title">前端工程师</span></div>
+              <div class="exp-date">2014.08 - 2017.04</div>
+            </div>
+            <div class="exp-achList">
+              <div>负责快速构建高质量移动APP/PC/H5页面</div>
+              <div>高度组件化、模块化思维，拥有各平台调试能力</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="exp project">
-        <h4>项目经历 &nbsp;&nbsp;PROJECT EXPERIENCES</h4>
-        <ul class="exp-list">
-          <li class="exp-item">
-            <div class="exp-post">腾讯企点营销云 <span class="date">[2024.02-2024.08]</span></span></div>
-            <div class="exp-des">企点营销云（https://qidian.qq.com/） SAAS 是基于 mirco-app 的主子应用微前端 monorepo 架构，包含MA，CDP，CA，LM等业务，助力企业通过数智驱动提升营销效果和客户体验。我负责营销云企微互动子应用及H5扫码流程相关的核心开发（已上线），并主动提出营销云架构下多版本的改造及微前端整体架构性能优化并部分实施；同时负责企点组件库（基于elp）的管理，沉淀了部分业务通用组件，并定制化 vjsf 生成器以适配更多业务场景，降低开发成本，提升效率。</div>
-          </li>
-          <li class="exp-item">
-            <div class="exp-post">腾讯企点营销优码定制化交付 <span class="date">[2023.05-2024.02]</span></div>
-            <div class="exp-des">是以C端优码核心链路（扫码/抽奖/领奖/个人中心等）为基础的客户营销活动的定制化开发与交付。我负责底层框架及部署能力的支持，指导并协同子公司完成小程序及H5的活动全链路开发。将整个开发交付过程抽象，并沉淀为标准化的小程序/H5交付子包框架及工程化配置，统一研发标准，提供sdk和可插拔基础模块，具备隔离性及高可扩展性，子公司同学可以通过cli一键生成不同客户子包工程，独立闭环开发，CR后通过流水线构建出来的子包可直接交付客户；大幅度提高客户沟通、开发交付效率和稳定性，开发交付周期节约5～15天以上。</div>
-          </li>
-          <li class="exp-item">
-            <div class="exp-post">腾讯优码-数字藏品营销平台 <span class="date">[2022.04-2023.05]</span></div>
-            <div class="exp-des">作为项目owner带领小团队(4人)从0到1快速封闭开发部署上线、中心化H5（https://m.nft.qq.com/userCenter）小程序（吾得库）、SAAS等项目并迭代优化，攻坚小程序3D渲染；并为了支撑藏品营销多样性，率先提出并落地藏品营销等模块三方插件化方案，支持多形态/多企业/积木化/配置化，同时增加监控埋点及验签保障业务稳定；简单高效的多形态接入模式获得了蒙牛、戴森、农夫山泉等客户高度认可，客户培训及接入控制在一日以内；获得【2022H1 outstanding】。</div>
-          </li>
-          <li class="exp-item">
-            <div class="exp-post">腾讯优码 <span class="date">[2021.04-2022.04]</span></div>
-            <div class="exp-des">腾讯优码（https://uma.qq.com/）作为全链路数字化解决方案，我负责【码平台/正品通/会员通】SAAS端/小程序端【腾讯优码正品通】/H5端的迭代核心开发，并主动提出对saas项目（基于qiankun）的构建优化，将本地开发及流水线构建多维度性能提升，提高开发及发布效率；制定及开发维护服务商合作规范，如开发规范，物料规范，开发模板等，并对相关规范对服务商进行培训宣讲及部门内规范npm包推广，获得【2021H2 优秀个人奖】。</div>
-          </li>
-          <li class="exp-item">
-            <div class="exp-post">聚美增长活动页面群 <span class="date">[2019.05-2021.04]</span></div>
-            <div class="exp-des">该项目（r.jumei.com）为聚美活动移动H5页面投放项目，包含海量活动，用于营销拉新裂变，运行环境在APP，H5，小程序等等，技术栈为vue，参与该项目人数共为12人，我负责需求评审，人员调配及制订协作规范和框架搭建及CI自动化集成。孵化出 jumei-sdk 用于使用聚美 APP 内提供的扫码、选图、定位、登录、用户信息获取等系统能力，同时整合 H5 开发中使用的各项在 APP，小程序，快应用环境里里各自 Native 功能如分享，支付等。</div>
-          </li>
-          <li class="exp-item">
-            <div class="exp-post">聚美优品+/鹿尚生活/白金大脑/聚美福利社/聚粉儿小程序/聚美优品快应用 <span class="date">[2018-2020]</span></div>
-            <div class="exp-des">各个小程序的开发上线为公司的增长营销提供了多渠道,参与该项目人数共为12人，我负责需求评审，人员调配及制订协作规范和框架搭建及CI自动化集成。开发形成一套具有聚美风格的脚手架，包含聚美内部的一些依赖，请求层，工具函数（组件库），CI 配置等等。并用于聚美各个小程序/快应用，刷宝小程序。</div>
-          </li>
-          <li class="exp-item">
-            <div class="exp-post">街电H5/小程序/CRM/机柜点亮H5,美点无人货架H5/CMS <span class="date">[2017-2018]</span></div>
-            <div class="exp-des">扫码租借流程的H5、小程序开发，商户平台CRM开发（react），无人货架扫码购买相关逻辑及后台管理系统的开发（vue），任核心开发。</div>
-          </li>
-          <li class="exp-item">
-            <div class="exp-post">移动校园APP<span class="date">[2015-2017]</span></div>
-            <div class="exp-des">一站式、全生命周期的校园官方移动服务平台，涵盖PC、安卓、IOS、微信平台，上线学校包括中央财经大学，北京交通大学，中国戏曲学院，辽宁大学，西南财经大学等等，下载量数十万，深受学生老师喜爱。</div>
-          </li>
-        </ul>
-      </div>
-      <div class="exp edu">
-        <div class="exp-cn">
-          <h4>教育背景</h4>
-          <ul class="exp-list">
-            <li class="exp-item">
-              <div class="exp-info">
-                <span>2010.09 - 2014.06</span>
-                <span>四川工商学院（本科）</span>
-              </div>
-              <div class="exp-post">电子信息工程</div>
-              <div class="exp-des">主修课程：数电，模电，单片机，嵌入式，C语言等等。</div>
-            </li>
-          </ul>
-        </div>
-        <div class="exp-en">
-          <h4>EDUCATION</h4>
-          <ul class="exp-list">
-            <li class="exp-item">
-              <div class="exp-info">
-                <span>2010.09 - 2014.06</span>
-                <span>STBU（B.S.）</span>
-              </div>
-              <div class="exp-post">Electronic Information Engineering</div>
-              <div class="exp-des">Major: digital, analog, single-chip, embedded, C language, etc.</div>
-            </li>
-          </ul>
+      <div class="exp">
+        <h4>教育背景</h4>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>四川工商学院（本科）&nbsp;&nbsp;&nbsp;&nbsp;电子信息工程</div>
+              <div class="exp-date">2010.09 - 2014.06</div>
+            </div>
+            <div class="exp-achList">
+              <div>1.主修课程：数电，模电，单片机，嵌入式，C语言等等。</div>
+              <div>2.相关证书：中级职称·工程师·大数据，CCNA，计算机四级等等</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div id="footer">
-      <p>感谢您的阅读。欢迎访问我的博客：<a href="https://korey.cc">https://korey.cc</a></p>
-      <div class="qrcode"></div>
+    <div class="footer">
+      <p>感谢您的阅读，诚待与您的进一步沟通。</p>
+      <div class="qrcode-list">
+        <div class="img blog"></div>
+        <div class="img github"></div>
+        <div class="img zhihu"></div>
+        <div class="img juejin"></div>
+      </div>
     </div>
   </div>
 </body>
