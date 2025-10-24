@@ -16,6 +16,9 @@ export const DARK_MODE_BAR_COLOR = '#1e1e20';
 export const LIGHT_MODE_BAR_COLOR = '#f6f6f7';
 
 export const sidebarRouter = {
+  ai: {
+    AI: 'index',
+  },
   micro: {
     微前端: 'index',
   },

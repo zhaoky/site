@@ -6,6 +6,7 @@ import * as c from './configs/const';
 import { withPwa } from '@vite-pwa/vitepress';
 import { getSidebar } from './configs/sidebar';
 import { search } from './configs/search';
+import { withMermaid } from 'vitepress-plugin-mermaid';
 // https://vitepress.dev/reference/site-config
 export const config = {
   title: c.title,
@@ -16,12 +17,34 @@ export const config = {
   cleanUrls: true,
   // lastUpdated: true, // 显示最后更新时间
   head, // <head>内标签配置
+  vite: {
+    optimizeDeps: {
+      include: ['dayjs', 'mermaid'],
+      force: true,
+    },
+    ssr: {
+      noExternal: ['dayjs', 'mermaid', 'vitepress-plugin-mermaid'],
+    },
+    define: {
+      __VUE_PROD_DEVTOOLS__: false,
+    },
+    build: {
+      commonjsOptions: {
+        esmExternals: true,
+      },
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/base/avatar.jpg',
-    outline: [2, 6],
+    outline: [2, 6] as [number, number],
     outlineTitle: '本文大纲',
     nav: [
+      {
+        text: 'AI',
+        link: '/ai/1',
+        activeMatch: '/ai',
+      },
       {
         text: '微前端',
         link: '/micro/999',
@@ -77,11 +100,11 @@ export const config = {
     sidebar: getSidebar(),
     socialLinks: [
       {
-        icon: 'github',
+        icon: 'github' as const,
         link: 'https://github.com/zhaoky',
       },
     ],
   },
 };
 
-export default withPwa(defineConfig(config as UserConfig<DefaultTheme.Config>));
+export default withPwa(withMermaid(defineConfig(config as UserConfig<DefaultTheme.Config>)));

@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>检测屏幕宽度</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        background: #fff;
+        color: #333;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>检测屏幕宽度</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      background: #fff;
-      color: #333;
-    }
+      #tt {
+        padding: 3px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
 
-    #tt {
-      padding: 3px;
-      line-height: 1.5;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="tt">Loading...</div>
-  <script>
-    var s = '';
-    s += '当前环境UA：' + navigator.userAgent + '<br><br>';
-    s += ' 网页正文全文宽document.body.scrollWidth：' + document.body.scrollWidth + '<br>';
-    s += ' 网页正文全文高document.body.scrollHeight：' + document.body.scrollHeight + '<br>';
-    s += ' 网页可见区域宽document.body.clientWidth：' + document.body.clientWidth + '<br>';
-    s += ' 网页可见区域高document.body.clientHeight：' + document.body.clientHeight + '<br>';
-    s += ' 网页可见区域宽document.body.offsetWidth：' + document.body.offsetWidth + ' (包括边线和滚动条的宽)' + '<br>';
-    s += ' 网页可见区域高document.body.offsetHeight：' + document.body.offsetHeight + ' (包括边线的宽)' + '<br>';
-    s += ' 网页被卷去的高(ff)document.body.scrollTop：' + document.body.scrollTop + '<br>';
-    s += ' 网页被卷去的高(ie)document.documentElement.scrollTop：' + document.documentElement.scrollTop + '<br>';
-    s += ' 网页被卷去的左document.body.scrollLeft：' + document.body.scrollLeft + '<br>';
-    s += ' 网页正文部分上window.screenTop：' + window.screenTop + '<br>';
-    s += ' 网页正文部分左window.screenLeft：' + window.screenLeft + '<br>';
-    s += ' 屏幕分辨率的高window.screen.height：' + window.screen.height + '<br>';
-    s += ' 屏幕分辨率的宽window.screen.width：' + window.screen.width + '<br>';
-    s += ' 屏幕可用工作区高度window.screen.availHeight：' + window.screen.availHeight + '<br>';
-    s += ' 元素的大小宽document.documentElement.getBoundingClientRect().width：' + document.documentElement.getBoundingClientRect().width + '<br>';
-    s += ' 元素的大小高document.documentElement.getBoundingClientRect().height：' + document.documentElement.getBoundingClientRect().height + '<br>';
-    s += ' 屏幕可用工作区宽度window.screen.availWidth：' + window.screen.availWidth + '<br>';
-    s += ' 你的屏幕设置是window.screen.colorDepth：' + window.screen.colorDepth + ' 位彩色' + '<br>';
-    s += ' 你的屏幕设置window.screen.deviceXDPI：' + window.screen.deviceXDPI + ' 像素/英寸' + '<br>';
-    document.getElementById('tt').innerHTML = s;
-  </script>
-</body>
-
+  <body>
+    <div id="tt">Loading...</div>
+    <script>
+      var s = '';
+      s += '当前环境UA：' + navigator.userAgent + '<br><br>';
+      s += ' 网页正文全文宽document.body.scrollWidth：' + document.body.scrollWidth + '<br>';
+      s += ' 网页正文全文高document.body.scrollHeight：' + document.body.scrollHeight + '<br>';
+      s += ' 网页可见区域宽document.body.clientWidth：' + document.body.clientWidth + '<br>';
+      s += ' 网页可见区域高document.body.clientHeight：' + document.body.clientHeight + '<br>';
+      s +=
+        ' 网页可见区域宽document.body.offsetWidth：' + document.body.offsetWidth + ' (包括边线和滚动条的宽)' + '<br>';
+      s += ' 网页可见区域高document.body.offsetHeight：' + document.body.offsetHeight + ' (包括边线的宽)' + '<br>';
+      s += ' 网页被卷去的高(ff)document.body.scrollTop：' + document.body.scrollTop + '<br>';
+      s += ' 网页被卷去的高(ie)document.documentElement.scrollTop：' + document.documentElement.scrollTop + '<br>';
+      s += ' 网页被卷去的左document.body.scrollLeft：' + document.body.scrollLeft + '<br>';
+      s += ' 网页正文部分上window.screenTop：' + window.screenTop + '<br>';
+      s += ' 网页正文部分左window.screenLeft：' + window.screenLeft + '<br>';
+      s += ' 屏幕分辨率的高window.screen.height：' + window.screen.height + '<br>';
+      s += ' 屏幕分辨率的宽window.screen.width：' + window.screen.width + '<br>';
+      s += ' 屏幕可用工作区高度window.screen.availHeight：' + window.screen.availHeight + '<br>';
+      s +=
+        ' 元素的大小宽document.documentElement.getBoundingClientRect().width：' +
+        document.documentElement.getBoundingClientRect().width +
+        '<br>';
+      s +=
+        ' 元素的大小高document.documentElement.getBoundingClientRect().height：' +
+        document.documentElement.getBoundingClientRect().height +
+        '<br>';
+      s += ' 屏幕可用工作区宽度window.screen.availWidth：' + window.screen.availWidth + '<br>';
+      s += ' 你的屏幕设置是window.screen.colorDepth：' + window.screen.colorDepth + ' 位彩色' + '<br>';
+      s += ' 你的屏幕设置window.screen.deviceXDPI：' + window.screen.deviceXDPI + ' 像素/英寸' + '<br>';
+      document.getElementById('tt').innerHTML = s;
+    </script>
+  </body>
 </html>
