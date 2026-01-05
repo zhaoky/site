@@ -8,6 +8,7 @@ services:
       - ./dist:/usr/share/nginx/html
     ports:
       - "1000:80"
+    restart: unless-stopped
   demo:
     build:
       context: .
@@ -16,6 +17,7 @@ services:
       - ./demo:/usr/share/nginx/html
     ports:
       - "2000:81"
+    restart: unless-stopped
   resume:
     build:
       context: .
@@ -24,3 +26,4 @@ services:
       - ./resume:/usr/share/nginx/html
     ports:
       - "3000:82"
+    restart: unless-stopped
