@@ -46,6 +46,11 @@ export const config = {
         activeMatch: '/ai',
       },
       {
+        text: '及思所想',
+        link: '/think/1',
+        activeMatch: '/think',
+      },
+      {
         text: '微前端',
         link: '/micro/999',
         activeMatch: '/micro',
@@ -92,8 +97,18 @@ export const config = {
       },
       {
         text: '更多',
-        link: '/links/index',
-        activeMatch: '/links',
+        items: [
+          {
+            text: '链接',
+            link: '/more/links',
+            activeMatch: '/more/links',
+          },
+          {
+            text: '关于我',
+            link: '/more/about',
+            activeMatch: '/more/about',
+          },
+        ],
       },
     ],
     search,

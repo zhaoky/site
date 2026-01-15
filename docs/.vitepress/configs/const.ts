@@ -19,6 +19,9 @@ export const sidebarRouter = {
   ai: {
     AI: 'index',
   },
+  think: {
+    及思所想: 'index',
+  },
   micro: {
     微前端: 'index',
   },
