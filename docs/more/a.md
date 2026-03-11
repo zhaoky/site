@@ -1,1014 +1,735 @@
-# Java 后端知识点总结（前端视角）
+# 前端架构师 → 全栈 → AI产品工程师 职业进化计划
 
-> 本文档面向有前端经验的开发者，所有概念均以 JS/TS 类比说明。
-
----
-
-## 目录
-
-1. [项目结构](#1-项目结构)
-2. [包名与文件路径](#2-包名与文件路径)
-3. [import 导入](#3-import-导入)
-4. [注解（Annotation）](#4-注解annotation)
-5. [Java 类与对象](#5-java-类与对象)
-6. [访问修饰符](#6-访问修饰符)
-7. [常用关键字](#7-常用关键字)
-8. [Lombok](#8-lombok)
-9. [Spring Boot 核心概念](#9-spring-boot-核心概念)
-10. [分层架构](#10-分层架构)
-11. [Controller 层](#11-controller-层)
-12. [Service 层](#12-service-层)
-13. [Repository 层](#13-repository-层)
-14. [Entity 实体类](#14-entity-实体类)
-15. [DTO / Pojo / VO](#15-dto--pojo--vo)
-16. [配置文件](#16-配置文件)
-17. [build.gradle](#17-buildgradle)
-18. [Java 语法特性](#18-java-语法特性)
-19. [类型系统](#19-类型系统)
-20. [常用数据结构](#20-常用数据结构)
+> **制定时间**：2026年3月
+> **目标周期**：9-12个月（原18个月，因学习时间翻倍）
+> **学习方式**：项目驱动 + Claude Code 全程指导
+> **最终目标**：成为能交付AI驱动产品的全栈工程师
 
 ---
 
-## 1. 项目结构
+## 个人背景
 
-```
-后端 Monorepo（Gradle 多模块）：
-
-backend/
-├── ma-doctor/
-│   ├── ma-doctor-service/          ← 可运行的服务（有 main 方法）
-│   │   ├── build.gradle            ← 模块的 package.json
-│   │   └── src/main/
-│   │       ├── java/               ← Java 源码
-│   │       └── resources/          ← 配置文件（application.yml）
-│   └── ma-doctor-common/           ← 公共接口定义模块
-└── ma-common/                      ← 全局公共模块
-```
-
-**类比前端：**
-
-| 后端 | 前端 |
-|---|---|
-| `build.gradle` | `package.json` |
-| `settings.gradle` | `pnpm-workspace.yaml` |
-| `~/.gradle/caches/` | `node_modules/` |
-| `./gradlew build` | `yarn build` |
-| `./gradlew bootRun` | `yarn serve` |
+| 项目 | 情况 |
+|------|------|
+| 年龄 | 35岁 |
+| 当前职位 | 前端架构师 |
+| 年薪 | 40w |
+| 地点 | 成都 |
+| 家庭 | 已婚，两个孩子（2岁、4岁） |
+| 财务 | 存款160w，有车有房无贷款 |
+| 现有后端经验 | Node.js、Python（小项目） |
+| **每日学习时间** | **3小时** |
+| **学习方式** | **公司项目实战 + Claude Code指导** |
 
 ---
 
-## 2. 包名与文件路径
+## 学习项目
 
-```java
-package com.hitales.ma.doctor;
-```
+**项目路径**：`/Users/edy/work/factory/mabase/backend/ma-doctor`
 
-- 包名 = 文件夹路径（点替换成斜杠）
-- `com.hitales.ma.doctor` → `com/hitales/ma/doctor/`
-- 命名规则：公司域名反转 + 项目名 + 模块名
+### 项目技术栈（即学习目标）
+
+| 技术领域 | 具体技术 | 学习优先级 |
+|---------|---------|-----------|
+| **核心框架** | Spring Boot 2.5.0 | ⭐⭐⭐⭐⭐ |
+| **JDK版本** | JDK 15 | ⭐⭐⭐⭐⭐ |
+| **构建工具** | Gradle | ⭐⭐⭐⭐ |
+| **ORM框架** | Spring Data JPA | ⭐⭐⭐⭐⭐ |
+| **微服务** | Spring Cloud 2020.0.6 | ⭐⭐⭐⭐ |
+| **微服务组件** | Spring Cloud Alibaba 2021.1 | ⭐⭐⭐⭐ |
+| **缓存** | Redis + Redisson | ⭐⭐⭐⭐ |
+| **消息队列** | RocketMQ | ⭐⭐⭐⭐ |
+| **搜索引擎** | Elasticsearch | ⭐⭐⭐ |
+| **安全认证** | Spring Security + JWT | ⭐⭐⭐⭐⭐ |
+| **数据库** | MySQL | ⭐⭐⭐⭐⭐ |
+
+### 项目模块结构
 
 ```
-com.hitales       ← 公司（hitales.com 反转）
-com.hitales.ma    ← 产品（医助项目）
-com.hitales.ma.doctor ← 模块（医生模块）
-```
-
-**类比 JS：**
-```
-包名：com.hitales.ma.doctor
-路径：src/hitales/ma/doctor/
+ma-doctor/
+├── ma-doctor-common/    # 公共模块（实体、DAO、通用服务）
+├── ma-doctor-message/   # 消息模块（站内信、推送）
+└── ma-doctor-service/   # 核心服务模块（主应用）
 ```
 
 ---
 
-## 3. import 导入
+## 学习方法论
 
-```java
-import com.hitales.ma.doctor.api.AbstractController;  // 当前项目代码
-import org.springframework.web.bind.annotation.*;     // Spring 框架
-import lombok.extern.slf4j.Slf4j;                    // 第三方库
+### 项目驱动学习法
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Claude Code 指导学习流程                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   1. 选择学习主题        2. 阅读项目代码        3. 理解原理      │
+│   ┌─────────────┐       ┌─────────────┐       ┌─────────────┐  │
+│   │ 今天学JPA   │  →    │ 读Repository│  →    │ Claude解释  │  │
+│   │             │       │ 和Entity代码│       │ 代码含义    │  │
+│   └─────────────┘       └─────────────┘       └─────────────┘  │
+│                                                                 │
+│   4. 动手实践           5. 代码审查            6. 总结归纳      │
+│   ┌─────────────┐       ┌─────────────┐       ┌─────────────┐  │
+│   │ 写一个小功能│  →    │ Claude审查  │  →    │ 记录笔记    │  │
+│   │ 或修改现有  │       │ 指出问题    │       │ 形成知识点  │  │
+│   └─────────────┘       └─────────────┘       └─────────────┘  │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-**如何判断来源：**
+### 每日学习模板
 
-| import 前缀 | 来源 |
-|---|---|
-| `com.hitales.ma.` | 当前项目源码 |
-| `com.hitales.commons.` | 公司内部组件库 |
-| `org.springframework.` | Spring 官方框架 |
-| `lombok.` | Lombok 工具库 |
-| `com.alibaba.` | 阿里开源库 |
-| `java.` / `javax.` | Java 标准库（部分无需 import）|
+```markdown
+## 日期：YYYY-MM-DD
+## 今日主题：[例如：Spring Data JPA]
+## 学习时长：3小时
 
-**`java.lang` 包无需 import，天生可用：**
-```java
-System.currentTimeMillis()  // 不需要 import
-String、Math、Integer、Object  // 同上
-```
+### 第1小时：代码阅读
+- 阅读文件：[具体文件路径]
+- 关键代码段：[截取关键代码]
+- 不理解的点：[列出疑问]
 
-**类比 JS：**
-```js
-import xxx from 'xxx'  // Java 的 import
-// java.lang ≈ JS 内置的 console、Math、JSON
-```
+### 第2小时：Claude讲解 + 实践
+- 疑问解答：[Claude的解释]
+- 动手练习：[写了什么代码]
 
----
+### 第3小时：巩固 + 扩展
+- 相关知识点：[关联的概念]
+- 明日计划：[下一步学什么]
 
-## 4. 注解（Annotation）
-
-### 本质
-
-注解 = 给代码贴"便利贴"，框架读取后自动执行对应逻辑。
-
-```java
-// 注解语法：@ + 注解名（可带参数）
-@RestController
-@RequestMapping("/api/v1/user")
-@RequiredArgsConstructor
-public class UserController { }
-```
-
-**类比 TypeScript 装饰器：**
-```typescript
-@Controller('/user')
-@UseGuards(AuthGuard)
-class UserController { }
-```
-
-### 注解的三个生命周期
-
-| 时机 | 注解例子 | 类比前端 |
-|---|---|---|
-| **编译期** | `@Slf4j`、`@Data`（Lombok） | Babel 插件转换 |
-| **启动时** | `@RestController`、`@Service` | webpack 分析依赖 |
-| **运行时** | `@GetMapping`（HTTP 请求到来） | 路由匹配 |
-
-### 注解的三个使用位置
-
-```java
-// 1. 贴在类上 —— 声明身份
-@RestController
-public class UserController { }
-
-// 2. 贴在方法上 —— 声明行为
-@GetMapping("/users")
-public List<User> list() { }
-
-// 3. 贴在参数上 —— 声明来源
-public User get(@PathVariable String id) { }
-```
-
-### 常用注解速查
-
-**身份注解（放入 IoC 容器）：**
-```java
-@RestController   // HTTP 控制器（= @Controller + @ResponseBody）
-@Service          // 业务层
-@Repository       // 数据层
-@Component        // 通用组件
-@Configuration    // 配置类
-```
-
-**路由注解：**
-```java
-@RequestMapping("/prefix")   // 路由前缀（贴类上）
-@GetMapping("/path")         // GET 请求
-@PostMapping("/path")        // POST 请求
-@PutMapping("/path/{id}")    // PUT 请求
-@DeleteMapping("/path/{id}") // DELETE 请求
-```
-
-**参数注解：**
-```java
-@PathVariable String id        // URL路径参数 /user/{id}
-@RequestParam String keyword   // 查询参数 ?keyword=xxx
-@RequestBody UserDTO body       // 请求体 JSON
-@RequestHeader String token    // 请求头
-@Valid                         // 触发参数校验
-```
-
-**注入注解：**
-```java
-@Autowired        // 自动注入（字段注入）
-@Value("${xxx}")  // 注入配置值
-```
-
-**配置注解：**
-```java
-@SpringBootApplication(
-    exclude = {DataSourceAutoConfiguration.class},
-    scanBasePackages = "com.hitales"
-)
-@EnableConfigurationProperties({RedisProp.class, ...})
-@ConfigurationProperties(prefix = "limit")
+### 知识卡片
+- 核心概念：
+- 使用场景：
+- 代码模板：
 ```
 
 ---
 
-## 5. Java 类与对象
+## 总体路线图（9-12个月）
 
-### 类的定义
-
-```java
-public class User {
-    // 字段（属性）
-    private String name;
-    private Integer age;
-
-    // 构造器
-    public User(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    // 方法
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-}
 ```
-
-**类比 JS：**
-```js
-class User {
-    #name
-    #age
-
-    constructor(name, age) {
-        this.#name = name
-        this.#age = age
-    }
-
-    get name() { return this.#name }
-    set name(val) { this.#name = val }
-}
-```
-
-### Java 对象 vs JS 对象
-
-| 特性 | Java 对象 | JS 对象 |
-|---|---|---|
-| 需要先定义类 | ✅ 必须 | ❌ 不需要 |
-| 字段类型固定 | ✅ 严格 | ❌ 随意 |
-| 可以随意加字段 | ❌ 不能 | ✅ 可以 |
-| 可以有方法 | ✅ | ✅ |
-| 类比 TS | 开了严格模式的 interface | 普通对象 |
-
-### `this` 的区别
-
-```java
-// Java：this 可以省略
-public void doSomething() {
-    name = "张三"        // 省略 this
-    this.name = "张三"   // 等价，加了 this 更明确
-}
-```
-
-```js
-// JS：必须写 this
-doSomething() {
-    this.name = '张三'   // 必须加 this
-}
-```
-
-### 方法定义语法
-
-```java
-// 格式：访问修饰符 返回类型 方法名(参数类型 参数名)
-public Paginated<PageVO> page(Integer userId, PageRequest page)
-
-// 对比 TypeScript
-// function page(userId: number, page: PageRequest): Paginated<PageVO>
-```
-
-**Java 和 TS 的区别：类型在左边，不是右边。**
-
----
-
-## 6. 访问修饰符
-
-```java
-public    // 任何地方都能访问
-protected // 当前类 + 子类 能访问
-private   // 只有当前类内部能访问（最常用）
-（默认）   // 同包内可访问
-```
-
-**类比 JS：**
-```js
-class Foo {
-    publicField = 1          // public
-    _protectedField = 2      // 约定 protected（JS 无真正的 protected）
-    #privateField = 3        // private（JS 私有字段）
-}
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           9-12个月总体规划                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   第一阶段（0-4月）              第二阶段（4-8月）         第三阶段（8-12月）  │
+│   ┌─────────────────┐          ┌─────────────────┐       ┌─────────────────┐│
+│   │   全栈基础       │    →    │   全栈进阶       │   →   │   AI工程化      ││
+│   │                 │          │                 │       │                 ││
+│   │ • Java核心      │          │ • 微服务深入    │       │ • LLM API       ││
+│   │ • Spring Boot   │          │ • 分布式组件    │       │ • Prompt工程    ││
+│   │ • JPA + MySQL   │          │ • 性能优化      │       │ • 向量数据库    ││
+│   │ • 项目代码精读  │          │ • 独立开发功能  │       │ • RAG应用       ││
+│   └─────────────────┘          └─────────────────┘       └─────────────────┘│
+│                                                                             │
+│   里程碑：读懂项目代码          里程碑：独立开发后端功能    里程碑：AI产品落地 │
+│   能修改简单Bug               能设计和实现完整API                            │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 7. 常用关键字
+## 第一阶段：全栈基础（0-4个月）
 
-### `final`
+### 阶段目标
+- 完全读懂 ma-doctor 项目代码
+- 掌握 Spring Boot + JPA + Spring Security 核心技能
+- 能独立修改Bug和实现简单功能
 
-```java
-private final ServiceA serviceA;
-// 等于 JS 的 const：引用不能改，但对象内容可以变
+---
+
+### 第1周：环境搭建 + 项目概览
+
+| 天 | 学习内容 | Claude指导任务 |
+|---|---------|---------------|
+| D1 | 搭建开发环境，确保项目能运行 | 让Claude帮你配置IDEA和Gradle |
+| D2 | 阅读项目整体结构，理解模块划分 | 让Claude解释项目架构 |
+| D3 | 阅读 `MaDoctorApplication.java` 启动类 | 理解Spring Boot启动流程 |
+| D4 | 阅读 `build.gradle`，理解依赖管理 | 让Claude解释每个依赖的作用 |
+| D5 | 阅读项目的CLAUDE.md和rules目录 | 理解项目开发规范 |
+| D6-7 | 复习总结，整理笔记 | 形成第一周知识卡片 |
+
+**本周产出**：
+- [ ] 项目能本地运行
+- [ ] 理解项目模块结构
+- [ ] 整理依赖清单和作用说明
+
+---
+
+### 第2-3周：Java核心语法强化
+
+**学习方式**：结合项目代码学习Java语法
+
+| 主题 | 项目中的代码示例 | 学习要点 |
+|-----|-----------------|---------|
+| 面向对象 | Entity类、Service类 | 类、继承、接口、多态 |
+| 集合框架 | List/Map在Service中的使用 | ArrayList、HashMap、Stream |
+| 泛型 | Repository<T, ID> | 泛型类、泛型方法 |
+| 注解 | @Entity, @Service, @Autowired | 注解原理、自定义注解 |
+| Lambda | Stream操作、函数式接口 | Lambda表达式、方法引用 |
+| 异常处理 | 全局异常处理器 | try-catch、自定义异常 |
+
+**每日任务模板**：
+```
+1. 在项目中找到相关代码（30分钟）
+2. 让Claude解释代码原理（1小时）
+3. 仿写或修改一段代码（1小时）
+4. 总结知识点（30分钟）
 ```
 
-| | `final` | 非 `final` |
-|---|---|---|
-| 引用能否改变 | ❌ 不能 | ✅ 可以 |
-| 内容能否变化 | ✅ 可以 | ✅ 可以 |
-| 类比 JS | `const` | `let` |
+**本阶段产出**：
+- [ ] Java核心语法笔记
+- [ ] 项目中的Java用法整理
+- [ ] 10个代码片段手写练习
 
-### `static`
+---
 
-```java
-public static void main(String[] args) { }
-// static 方法属于类本身，不需要 new 就能调用
-// main 方法必须是 static，因为 JVM 启动时还没有任何对象
+### 第4-6周：Spring Boot核心
+
+| 周 | 主题 | 项目代码学习 | 动手实践 |
+|---|-----|-------------|---------|
+| W4 | IoC容器、依赖注入 | 阅读Service层如何注入 | 写一个简单Service |
+| W5 | Spring MVC、Controller | 阅读 `*Controller.java` | 写一个CRUD接口 |
+| W6 | 配置管理、Profile | 阅读 application.yml | 理解不同环境配置 |
+
+**重点文件阅读清单**：
+```
+ma-doctor-service/src/main/java/com/hitales/ma/doctor/
+├── MaDoctorApplication.java          # 启动类
+├── api/
+│   ├── AbstractController.java       # 控制器基类
+│   └── decisionsupport/              # 业务控制器
+└── config/                           # 配置类
 ```
 
-### `abstract`
+**本阶段产出**：
+- [ ] 理解Spring IoC原理
+- [ ] 能写RESTful API
+- [ ] 理解项目的Controller层设计
 
-```java
-public abstract class AbstractController { }
-// 抽象类：不能直接 new，只能被继承
-// 目的：只提供公共能力，本身没有完整意义
+---
+
+### 第7-9周：Spring Data JPA
+
+| 周 | 主题 | 项目代码学习 | 动手实践 |
+|---|-----|-------------|---------|
+| W7 | Entity、Repository基础 | 阅读 `*Entity.java` | 写一个Entity |
+| W8 | 查询方法、JPQL | 阅读 `*Repository.java` | 实现复杂查询 |
+| W9 | 关联关系、事务管理 | 阅读多表关联代码 | 理解@Transactional |
+
+**重点文件阅读清单**：
+```
+ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/
+├── domain/
+│   ├── */entity/*.java              # 实体类
+│   └── */repository/*.java          # 数据访问层
+└── service/*.java                   # 服务层
 ```
 
-### `extends`（继承）
+**本阶段产出**：
+- [ ] 理解JPA/Hibernate原理
+- [ ] 能设计Entity和Repository
+- [ ] 理解项目的数据访问层设计
 
-```java
-public class SysNoticeMessageController extends AbstractController {
-// 子类继承父类的所有 public/protected 方法和字段
+---
+
+### 第10-12周：Spring Security + JWT
+
+| 周 | 主题 | 项目代码学习 | 动手实践 |
+|---|-----|-------------|---------|
+| W10 | Security基础、过滤器链 | 阅读 `SpringSecurityConfig.java` | 理解认证流程 |
+| W11 | JWT原理、Token生成验证 | 阅读JWT相关代码 | 手写Token生成 |
+| W12 | 权限控制、角色管理 | 阅读权限相关代码 | 实现简单权限控制 |
+
+**重点文件阅读清单**：
+```
+ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/config/
+└── SpringSecurityConfig.java         # 安全配置
+
+依赖包（在build.gradle中）:
+- spring-boot-starter-security
+- spring-security-jwt
+- jjwt-api/impl/jackson
 ```
 
-**类比 JS：**
-```js
-class SysNoticeMessageController extends AbstractController { }
+**本阶段产出**：
+- [ ] 理解Spring Security架构
+- [ ] 理解JWT认证流程
+- [ ] 能实现登录认证功能
+
+---
+
+### 第13-16周：Redis + 缓存
+
+| 周 | 主题 | 项目代码学习 | 动手实践 |
+|---|-----|-------------|---------|
+| W13 | Redis基础、数据结构 | 理解项目中Redis使用场景 | 本地安装Redis |
+| W14 | Spring Cache、JetCache | 阅读缓存注解使用 | 给接口加缓存 |
+| W15 | Redisson分布式锁 | 阅读锁相关代码 | 实现分布式锁 |
+| W16 | 缓存策略、常见问题 | 分析项目缓存设计 | 优化缓存方案 |
+
+**项目中使用的缓存技术**：
+```
+- JetCache (com.alicp.jetcache:jetcache-anno)
+- Redisson (org.redisson:redisson)
+- hitales-commons-redis
 ```
 
-### `implements`（实现接口）
+**本阶段产出**：
+- [ ] 理解Redis核心数据结构
+- [ ] 能使用缓存注解
+- [ ] 理解分布式锁原理
 
-```java
-public interface NoticeMessageRepository extends JpaRepository<NoticeMessage, Integer> { }
-// interface 只定义方法签名，不写实现
-// Spring 自动生成实现类
+---
+
+### 第一阶段里程碑检查（第4个月末）
+
+```
+□ 能完全读懂项目代码结构
+□ 理解Spring Boot核心原理
+□ 熟练使用Spring Data JPA
+□ 理解Spring Security + JWT认证
+□ 能使用Redis做缓存
+□ 能独立修改简单Bug
+□ 能实现简单的后端功能
+□ 输出学习笔记 ≥ 20篇
 ```
 
 ---
 
-## 8. Lombok
+## 第二阶段：全栈进阶（4-8个月）
 
-Lombok 是代码生成工具，在编译期自动生成冗余代码。
-
-| 注解 | 自动生成 |
-|---|---|
-| `@Data` | getter + setter + equals + hashCode + toString |
-| `@Getter` | 所有字段的 getter |
-| `@Setter` | 所有字段的 setter |
-| `@RequiredArgsConstructor` | `final` 字段的构造器 |
-| `@Slf4j` | `log` 变量（日志） |
-| `@Builder` | 建造者模式 |
-| `@EqualsAndHashCode` | equals 和 hashCode 方法 |
-
-**Getter/Setter 命名规则：**
-```
-字段名          getter              setter
-msgId      →   getMsgId()          setMsgId(value)
-read       →   getRead()           setRead(value)
-createTime →   getCreateTime()     setCreateTime(value)
-```
-
-**`@RequiredArgsConstructor` vs `@Autowired`：**
-
-```java
-// 方式一：@Autowired 字段注入（不推荐）
-@Autowired
-private UserService userService;
-
-// 方式二：@RequiredArgsConstructor 构造器注入（推荐）
-@RequiredArgsConstructor
-public class UserController {
-    private final UserService userService;  // Lombok 自动生成构造器
-}
-```
-
-**Lombok 生成的代码在 `.class` 文件中才存在，源码 `.java` 里看不到。**
+### 阶段目标
+- 深入理解微服务架构
+- 掌握消息队列、搜索引擎
+- 能独立设计和实现完整的后端功能模块
 
 ---
 
-## 9. Spring Boot 核心概念
+### 第5个月：微服务架构
 
-### 启动流程
+| 周 | 主题 | 学习内容 |
+|---|-----|---------|
+| W17 | 微服务概念 | 单体vs微服务、服务拆分原则 |
+| W18 | Spring Cloud基础 | 服务注册发现、配置中心 |
+| W19 | OpenFeign远程调用 | 阅读项目中的FeignClient |
+| W20 | 网关、负载均衡 | Gateway、Ribbon原理 |
 
+**项目中的微服务组件**：
 ```
-java -jar app.jar
-    ↓
-JVM 启动
-    ↓
-调用 main() 方法
-    ↓
-SpringApplication.run() 触发：
-    ① 读取 application.yml 配置
-    ② 扫描 com.hitales 包下所有注解
-    ③ 实例化所有 Bean 放入 IoC 容器
-    ④ 处理 @Autowired 注入（连线）
-    ⑤ 启动内嵌 Tomcat，注册路由表
-    ↓
-服务就绪，等待 HTTP 请求
-```
-
-### IoC 容器（控制反转）
-
-**IoC 容器 = Spring 维护的全局对象仓库（单例 Map）**
-
-```
-IoC 容器：
-{
-  "userService"           → UserService 的唯一实例,
-  "noticeMessageService"  → SysNoticeMessageService 的唯一实例,
-  "redisClient"           → RedisClient 的唯一实例,
-  ...
-}
-```
-
-- 所有 Bean 默认**单例**，全局共享同一个实例
-- `@Autowired` = 从容器里取对应实例注入
-
-**类比 JS：**
-```js
-// 等于全局单例注册表
-const container = new Map()
-container.set('userService', new UserService())
-
-// @Autowired 等于
-const userService = container.get('userService')
-```
-
-**类比前端：**
-```
-IoC 容器 ≈ Pinia store（全局单例状态管理）
-@Autowired ≈ useUserStore()（取单例实例）
-```
-
-### Bean 的注册方式
-
-```java
-// 方法一：类上加注解，Spring 自动扫描注册
-@Service
-public class UserService { }
-
-// 方法二：配置类手动注册
-@Configuration
-public class AppConfig {
-    @Bean
-    public SomeClient someClient() {
-        return new SomeClient(config);
-    }
-}
-```
-
-### Tomcat
-
-Spring Boot 内嵌 Tomcat，等于 Node.js 的 HTTP Server：
-
-```
-传统方式：安装 Tomcat → 部署 war 包
-Spring Boot：java -jar app.jar → 内嵌 Tomcat 自动启动
+- Spring Cloud 2020.0.6
+- Spring Cloud Alibaba 2021.1
+- Nacos（配置中心、服务发现）
+- OpenFeign（远程调用）
 ```
 
 ---
 
-## 10. 分层架构
+### 第6个月：消息队列（RocketMQ）
 
+| 周 | 主题 | 项目代码学习 |
+|---|-----|-------------|
+| W21 | MQ概念、RocketMQ架构 | 理解异步解耦场景 |
+| W22 | 生产者、消费者 | 阅读 `*Producer.java` |
+| W23 | 消息类型、事务消息 | 分析项目中的MQ使用 |
+| W24 | 消息可靠性、重试机制 | 理解消息不丢失方案 |
+
+**项目中的MQ相关文件**：
 ```
-HTTP 请求
-    ↓
-Controller（路由层）   ← 接收参数，调 Service，返回结果
-    ↓
-Service（业务层）      ← 写业务逻辑，调 Repository
-    ↓
-Repository（数据层）   ← 只负责数据库操作
-    ↓
-数据库
-```
+ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
+└── PatientVisitNotifyProducer.java    # 消息生产者示例
 
-**类比前端分层：**
-
-| 后端 | 前端 |
-|---|---|
-| Controller | pages/views（路由入口） |
-| Service | composables/store/actions（业务逻辑） |
-| Repository | api/services（数据请求） |
-| Entity | TypeScript interface（数据结构定义） |
-| 数据库 | 后端 API |
-
-**原则：**
-- Controller 不写业务逻辑
-- Service 不直接操作数据库
-- Repository 不写业务逻辑
-
----
-
-## 11. Controller 层
-
-```java
-@RestController                              // 身份：REST 控制器
-@RequestMapping("/api/v1/ma/doctor/message") // 路由前缀
-@RequiredArgsConstructor                     // 构造器注入
-public class SysNoticeMessageController extends AbstractController {
-
-    private final SysNoticeMessageService noticeMessageService;
-
-    @GetMapping("/notices")
-    public Paginated<NoticePageVO> notices(
-        @RequestParam(defaultValue = "0") Integer page,     // ?page=0
-        @RequestParam(defaultValue = "10") Integer pageSize // ?page_size=10
-    ) {
-        return noticeMessageService.noticePage(getUserIdOrThrow(), PageRequest.of(page, pageSize));
-    }
-
-    @PostMapping("/notice/read")
-    public void noticeRead(@Valid @RequestBody ReadRequest request) {
-        noticeMessageService.noticeRead(request);
-    }
-}
-```
-
-**路由拼接：**
-```
-类上的前缀 + 方法上的路径 = 完整路径
-/api/v1/ma/doctor/message + /notices = /api/v1/ma/doctor/message/notices
-```
-
-**`@RestController` = `@Controller` + `@ResponseBody`：**
-- `@Controller`：注册为控制器
-- `@ResponseBody`：返回值自动序列化成 JSON（等于 `res.json()`）
-
-**Controller 不会被其他 Java 代码调用，只被 HTTP 请求触发。**
-
----
-
-## 12. Service 层
-
-```java
-@Service
-@RequiredArgsConstructor
-public class SysNoticeMessageService {
-
-    private final NoticeMessageRepository noticeMessageRepository;
-
-    public void noticeRead(ReadRequest request) {
-        noticeMessageRepository.findById(request.getMsgId())
-            .filter(d -> d.getRead() == 0)   // 过滤未读
-            .ifPresent(d -> {
-                d.setRead(1);
-                noticeMessageRepository.save(d);
-            });
-    }
-}
+依赖：
+- hitales-commons-rocketmq
+- org.apache.rocketmq:rocketmq-client
 ```
 
 ---
 
-## 13. Repository 层
+### 第7个月：Elasticsearch
 
-**Repository = Java 的 ORM 层，类比 Prisma/TypeORM/Sequelize**
+| 周 | 主题 | 学习内容 |
+|---|-----|---------|
+| W25 | ES基础、倒排索引 | 理解搜索引擎原理 |
+| W26 | Spring Data ES | 阅读ES相关Repository |
+| W27 | 查询DSL、聚合 | 实现复杂搜索功能 |
+| W28 | 索引设计、性能优化 | 分析项目ES使用 |
 
-```java
-@Repository
-public interface NoticeMessageRepository
-    extends JpaRepository<NoticeMessage, Integer>,
-            JpaSpecificationExecutor<NoticeMessage> {
-
-    // 方法名自动生成 SQL
-    Integer countByUserIdAndRead(Integer userId, int read);
-    // → SELECT COUNT(*) FROM ... WHERE user_id=? AND read=?
-
-    List<NoticeMessage> findByUserIdAndRead(Integer userId, Integer read);
-    // → SELECT * FROM ... WHERE user_id=? AND read=?
-
-    // 自定义 SQL
-    @Query("SELECT n FROM NoticeMessage n WHERE n.userId = :userId")
-    List<NoticeMessage> findByUserId(@Param("userId") Integer userId);
-}
+**项目中ES相关**：
 ```
-
-**`JpaRepository<Entity, ID>` 自动提供：**
-```java
-findById(id)       // 按主键查
-findAll()          // 查全部
-save(entity)       // 新增或更新
-deleteById(id)     // 按主键删除
-count()            // 统计总数
-existsById(id)     // 判断是否存在
-```
-
-**`JpaSpecificationExecutor` 提供动态查询：**
-```java
-// 动态拼条件
-repository.findAll(spec, pageable)
-```
-
-**接口（interface）不需要写实现，Spring Data JPA 自动生成。**
-
----
-
-## 14. Entity 实体类
-
-**Entity = 数据库表的 Java 对象映射**
-
-```java
-@Entity
-@Table(name = "sys_notice_message")  // 对应数据库表名
-@DynamicUpdate   // 更新只更新变化的字段
-@DynamicInsert   // 插入跳过 null 字段
-@Data            // Lombok：getter/setter
-public class NoticeMessage extends IntAuditableEntity {
-
-    @Column(name = "user_id")
-    private Integer userId;
-
-    @Column(name = "title")
-    private String title;
-
-    @Column(name = "read", columnDefinition = "tinyint default 0")
-    private Integer read;
-
-    @Type(type = "json")
-    @Column(name = "ext_data")
-    private Map<String, Object> extData;  // JSON 列自动序列化/反序列化
-}
-```
-
-**继承 `IntAuditableEntity` 自动获得：**
-```java
-private Integer id;           // 主键（自增）
-private LocalDateTime createdAt;  // 创建时间（自动填）
-private LocalDateTime updatedAt;  // 更新时间（自动填）
-```
-
-**类比 TypeScript：**
-```typescript
-interface NoticeMessage {
-    id: number
-    userId: number
-    title: string
-    read: number
-    extData: Record<string, unknown>
-    createdAt: Date
-}
+依赖：
+- org.elasticsearch.client:elasticsearch-rest-high-level-client
+- org.springframework.data:spring-data-elasticsearch
+- hitales-commons-elastic2
 ```
 
 ---
 
-## 15. DTO / Pojo / VO
+### 第8个月：综合实战
 
-**DTO = Data Transfer Object，专门用于网络传输的数据对象**
+| 周 | 主题 | 实战任务 |
+|---|-----|---------|
+| W29 | 需求分析 | 选择一个功能模块深入理解 |
+| W30 | 设计方案 | 设计API、数据库、缓存方案 |
+| W31 | 编码实现 | 独立实现完整功能 |
+| W32 | 测试上线 | 单元测试、联调、部署 |
 
-```java
-public class PrivateMessageApiPojo {
+---
 
-    // 响应 DTO（后端 → 前端）
-    @Data
-    public static class PageVO {
-        private Integer msgId;
-        private String title;
-        private String content;
-        private Integer read;
-        private LocalDateTime createTime;
-        // 不包含敏感字段！
-    }
+### 第二阶段里程碑检查（第8个月末）
 
-    // 请求 DTO（前端 → 后端）
-    @Data
-    public static class ReadRequest {
-        @NotNull          // 校验：不能为 null
-        private Integer msgId;
-    }
-}
 ```
-
-**为什么不直接返回 Entity？**
-- Entity 可能有敏感字段（内部备注、token 等）
-- 数据库字段不等于前端需要的字段
-- Entity 结构不应暴露给外部
-
-**各种叫法对应关系：**
-
-| 叫法 | 含义 |
-|---|---|
-| DTO | Data Transfer Object（最标准） |
-| Pojo | Plain Old Java Object（泛指） |
-| VO | Value Object（通常指响应对象） |
-| Request | 请求对象 |
-
-**常用校验注解（配合 `@Valid` 使用）：**
-```java
-@NotNull          // 不能为 null
-@NotEmpty         // 不能为空字符串
-@NotBlank         // 不能为空白
-@Min(1)           // 最小值
-@Max(100)         // 最大值
-@Size(min=1,max=50) // 长度范围
-@Email            // 邮箱格式
+□ 理解微服务架构设计原则
+□ 熟练使用RocketMQ
+□ 能使用Elasticsearch实现搜索
+□ 独立实现过至少1个完整功能模块
+□ 能进行Code Review
+□ 能参与后端技术方案讨论
+□ 输出学习笔记 ≥ 15篇
 ```
 
 ---
 
-## 16. 配置文件
+## 第三阶段：AI工程化（8-12个月）
 
-### 文件位置
+### 阶段目标
+- 掌握LLM应用开发
+- 能将AI能力集成到现有系统
+- 完成AI驱动的产品功能
 
+---
+
+### 第9个月：LLM API + Prompt工程
+
+| 周 | 主题 | 学习内容 |
+|---|-----|---------|
+| W33 | LLM基础 | Transformer原理、主流模型 |
+| W34 | API调用 | OpenAI、Claude、国产模型API |
+| W35 | Prompt设计 | 提示词工程方法论 |
+| W36 | 结构化输出 | JSON Mode、Function Calling |
+
+**结合项目学习**：
 ```
-src/main/resources/
-├── application.yml          ← 基础配置（自动加载，无需任何代码指定）
-├── application-dev.yml      ← 开发环境配置
-├── application-dy.yml       ← dy 环境配置（默认）
-└── config/
-    └── application-common.yml ← 公共配置
-```
+项目中已有AI集成：
+- huihao-big-model SDK
+- hitales-jianyou-knowledge-engine（知识引擎）
+- 语音识别、OCR等AI能力
 
-### 加载优先级（从低到高）
-
-```
-① application-common.yml   最低
-② application.yml
-③ application-{profile}.yml  最高（同名字段覆盖前者）
-④ 命令行参数 -Dxxx=yyy      优先级最高
-```
-
-### 环境切换
-
-```yaml
-# application.yml
-spring:
-  profiles:
-    active: ${local.active.profile:dy}
-    # 读取环境变量 local.active.profile，默认值为 dy
-```
-
-```bash
-# 切换环境
-java -jar app.jar -Dlocal.active.profile=dev
-java -jar app.jar -Dlocal.active.profile=test
-```
-
-### 配置的两种消费方式
-
-**方式一：框架自动消费（Spring 内置配置项）**
-```yaml
-server:
-  port: 8080  # Spring 自动用这个端口启动 Tomcat
-```
-
-**方式二：业务代码读取**
-```java
-// @ConfigurationProperties：整块映射
-@ConfigurationProperties(prefix = "limit")
-public class LimitProps {
-    private Integer dialogue;  // 对应 yml 的 limit.dialogue
-    private Integer maxRound;  // 对应 yml 的 limit.max-round（自动驼峰转换）
-}
-
-// @Value：读单个值
-@Value("${online.registration.proportion}")
-private double proportion;
-```
-
-### 占位符语法
-
-```yaml
-# ${变量名:默认值}
-active: ${local.active.profile:dy}
-dir: ${hitales.commons.path.root}/doctor/video
-
-# 类比 JS
-const active = process.env.LOCAL_ACTIVE_PROFILE ?? 'dy'
+可以学习项目中已有的AI调用方式
 ```
 
 ---
 
-## 17. build.gradle
+### 第10个月：向量数据库 + RAG
 
-**build.gradle = 模块的 package.json**，用 Groovy 语言编写。
+| 周 | 主题 | 学习内容 |
+|---|-----|---------|
+| W37 | Embedding原理 | 文本向量化、相似度计算 |
+| W38 | 向量数据库 | Milvus/pgvector/Pinecone |
+| W39 | RAG架构 | 检索增强生成原理 |
+| W40 | RAG实战 | 构建知识库问答系统 |
 
-```groovy
-// 插件（= devDependencies 里的构建工具）
-apply plugin: 'org.springframework.boot'
-apply plugin: 'java-library'
+---
 
-// 入口类（= package.json 的 main）
-bootJar {
-    mainClass = 'com.hitales.ma.doctor.MaDoctorApplication'
-}
+### 第11个月：AI Agent
 
-// 依赖（= dependencies）
-dependencies {
-    // 内部模块依赖
-    implementation project(":ma-common:ma-common-queue")
+| 周 | 主题 | 学习内容 |
+|---|-----|---------|
+| W41 | Function Calling | 工具调用原理 |
+| W42 | Agent架构 | ReAct、Plan-and-Execute |
+| W43 | 多Agent协作 | Agent编排和通信 |
+| W44 | Agent评估 | 可靠性、安全性 |
 
-    // 外部库依赖
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation "com.hitales:hitales-commons-redis:${hitalesCommon}"
+---
 
-    // 测试依赖
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
+### 第12个月：AI产品落地
 
-// Groovy 语法：<< 等于数组 push()
-options.compilerArgs << '-Xlint:none'
-// 等于 JS：options.compilerArgs.push('-Xlint:none')
+| 周 | 主题 | 实战任务 |
+|---|-----|---------|
+| W45 | 需求定义 | 确定AI功能需求 |
+| W46 | 方案设计 | 技术选型、架构设计 |
+| W47 | 开发实现 | 编码、联调 |
+| W48 | 上线运营 | 部署、监控、迭代 |
+
+**可能的AI功能方向**：
+- 智能问诊助手（利用项目的医疗场景）
+- 病历智能分析
+- 医疗知识库问答
+- 报告解读AI增强
+
+---
+
+### 第三阶段里程碑检查（第12个月末）
+
+```
+□ 熟练调用主流LLM API
+□ 掌握Prompt工程方法论
+□ 能搭建向量数据库
+□ 独立开发RAG应用
+□ 理解AI Agent架构
+□ 有1个AI功能上线或demo
+□ 形成AI应用开发方法论
 ```
 
 ---
 
-## 18. Java 语法特性
+## Claude Code 使用指南
 
-### Lambda 表达式
+### 日常学习对话模板
 
-```java
-// Java Lambda（Java 8+）
-(参数) -> 表达式
-(参数) -> { 多行代码 }
+#### 1. 代码解释
+```
+请解释这段代码的作用和原理：
+[粘贴代码]
 
-// 示例
-.filter(d -> d.getRead() == 0)
-.ifPresent(d -> {
-    d.setRead(1);
-    repository.save(d);
-})
-
-// 类比 JS 箭头函数
-.filter(d => d.read === 0)
-.forEach(d => {
-    d.read = 1
-    repository.save(d)
-})
+特别想了解：
+1. 这里用了什么设计模式？
+2. 为什么要这样写？
+3. 有什么最佳实践？
 ```
 
-### 方法引用
-
-```java
-// 类名::方法名
-TokenServicePojo.UserToken::getUserId
-// 等价于 Lambda：
-token -> token.getUserId()
-
-// 类比 JS
-token => token.getUserId()
+#### 2. 概念学习
+```
+我正在学习 [Spring Data JPA]，
+请结合我的项目 /Users/edy/work/factory/mabase/backend/ma-doctor 中的代码，
+帮我理解 [Repository接口] 的原理和用法。
 ```
 
-### 链式调用
-
-```java
-// Java 链式
-noticeMessageRepository.findById(id)
-    .filter(d -> d.getRead() == 0)
-    .ifPresent(d -> { ... })
-
-// 类比 JS
-arr.filter(d => d.read === 0).forEach(d => { ... })
+#### 3. 动手实践
+```
+我想在项目中实现一个 [功能描述]，
+请帮我：
+1. 分析需要修改哪些文件
+2. 给出实现步骤
+3. 提供代码示例
+4. 指出注意事项
 ```
 
-### 强制类型转换
+#### 4. 代码审查
+```
+请审查我写的这段代码：
+[粘贴代码]
 
-```java
-(Integer) someValue
-// 类比 TypeScript
-someValue as number
+请从以下角度评审：
+1. 代码规范
+2. 性能问题
+3. 安全隐患
+4. 改进建议
 ```
 
-### 文本块（Java 15+）
-
-```java
-// Java 15 多行字符串
-log.info("""
-    服务启动
-    地址: http://127.0.0.1:{}
-    端口: {}
-    """, port, port);
-
-// 类比 JS 模板字符串
-`服务启动
-地址: http://127.0.0.1:${port}`
+#### 5. 问题排查
 ```
+我遇到了这个错误：
+[错误信息]
 
-### Optional
+相关代码：
+[粘贴代码]
 
-```java
-// Optional = 可能有值，可能没有（避免 NullPointerException）
-Optional<User> user = repository.findById(1);
-
-user.isPresent()           // 是否有值
-user.get()                 // 取值（没值会报错）
-user.orElse(defaultValue)  // 有值取值，没值取默认值
-user.orElseThrow(...)      // 没值抛异常
-user.map(u -> u.getName()) // 有值则转换，没值返回 empty
-user.filter(u -> u.getAge() > 18) // 条件过滤
-
-// 类比 JS 可选链
-user?.name
-user ?? defaultValue
+请帮我分析原因并给出解决方案。
 ```
 
 ---
 
-## 19. 类型系统
+## 时间管理
 
-### 基本类型 vs 包装类型
+### 每日3小时分配
 
-| 基本类型 | 包装类型 | 说明 |
-|---|---|---|
-| `int` | `Integer` | 整数 |
-| `long` | `Long` | 长整数 |
-| `double` | `Double` | 浮点数 |
-| `boolean` | `Boolean` | 布尔 |
-
-**规则：**
-- 基本类型（小写）：不能为 null，性能更好
-- 包装类型（大写）：可以为 null，用于泛型和数据库字段
-
-```java
-// 数据库字段用包装类型（可能为 null）
-private Integer age;
-
-// 计数器用基本类型（不会为 null）
-int count = 0;
+```
+┌─────────────────────────────────────────────────────────┐
+│                    每日3小时学习分配                      │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│   第1小时：代码阅读 + 理解                               │
+│   ├── 打开项目代码                                      │
+│   ├── 选择今日学习主题相关文件                           │
+│   ├── 逐行阅读，标记不理解的地方                         │
+│   └── 记录疑问清单                                      │
+│                                                         │
+│   第2小时：Claude讲解 + 答疑                             │
+│   ├── 把代码和疑问发给Claude                            │
+│   ├── 深入理解原理                                      │
+│   ├── 关联知识扩展                                      │
+│   └── 整理成知识卡片                                    │
+│                                                         │
+│   第3小时：动手实践 + 总结                               │
+│   ├── 仿写或修改代码                                    │
+│   ├── 让Claude审查                                      │
+│   ├── 修正问题                                          │
+│   └── 写学习笔记                                        │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
 ```
 
-### 泛型
+### 年度时间预算
 
-```java
-// T 是占位符，使用时确定具体类型
-List<String>           // T = String
-Optional<User>         // T = User
-Paginated<PageVO>      // T = PageVO
-JpaRepository<NoticeMessage, Integer>  // T = NoticeMessage, ID = Integer
+| 项目 | 时间 |
+|-----|-----|
+| 每日学习 | 3h × 300天 = 900小时 |
+| **年度总计** | **900小时** |
+
+相比原计划675小时，增加33%，足够在9-12个月完成目标。
+
+---
+
+## 学习资源
+
+### 主要资源：Claude Code
+
+```
+优势：
+✓ 24小时可用
+✓ 能直接阅读你的项目代码
+✓ 个性化讲解
+✓ 实时答疑
+✓ 代码审查
+✓ 问题排查
+
+使用技巧：
+- 提供完整上下文（文件路径、相关代码）
+- 问具体问题而非泛泛而谈
+- 让Claude解释"为什么"而非只是"是什么"
+- 动手实践后让Claude审查
 ```
 
-**类比 TypeScript：**
-```typescript
-Array<string>          // T = string
-Promise<User>          // T = User
+### 补充资源（按需查阅）
+
+| 类型 | 资源 | 用途 |
+|-----|------|-----|
+| 官方文档 | Spring官网、JDK文档 | 权威参考 |
+| 源码 | Spring Framework源码 | 深入原理 |
+| 博客 | 掘金、思否 | 实战案例 |
+| 问答 | StackOverflow | 问题解决 |
+
+---
+
+## 风险与应对
+
+| 风险 | 应对策略 |
+|-----|---------|
+| 项目代码太复杂看不懂 | 从简单模块开始，逐步深入 |
+| 某个概念卡住 | 换个角度问Claude，或者先跳过后面再回来 |
+| 学习疲劳 | 每周休息1天，保持节奏 |
+| 工作太忙 | 保证每天至少1小时，周末补时间 |
+| 技术更新 | 核心原理不变，框架可以快速切换 |
+
+---
+
+## 阶段性成果
+
+### 学习笔记计划
+
+| 阶段 | 笔记数量 | 主题 |
+|-----|---------|-----|
+| 第一阶段 | ≥20篇 | Java、Spring Boot、JPA、Security |
+| 第二阶段 | ≥15篇 | 微服务、MQ、ES |
+| 第三阶段 | ≥15篇 | AI应用开发 |
+| **总计** | **≥50篇** | |
+
+### 实践成果
+
+| 阶段 | 成果 |
+|-----|-----|
+| 第一阶段 | 修复3-5个Bug，实现1-2个小功能 |
+| 第二阶段 | 独立实现1个完整功能模块 |
+| 第三阶段 | 完成1个AI功能上线或demo |
+
+---
+
+## 最终目标画像
+
 ```
-
-### 内部类访问
-
-```java
-// 外部类.内部类
-PrivateMessageApiPojo.PageVO
-SysNoticeMessageApiPojo.ReadRequest
-
-// 类比 JS
-const PageVO = PrivateMessageApiPojo.PageVO
+┌─────────────────────────────────────────────────────────────┐
+│                    AI产品工程师 技能画像                      │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   前端能力（存量）          后端能力（增量）                   │
+│   ├── React/Vue           ├── Java/Spring Boot              │
+│   ├── TypeScript          ├── Spring Data JPA               │
+│   ├── 性能优化            ├── Spring Security               │
+│   ├── 工程化              ├── 微服务架构                      │
+│   └── 用户体验            ├── Redis/RocketMQ/ES             │
+│                           └── 系统设计                        │
+│                                                             │
+│   AI能力（增量）            软技能（持续）                     │
+│   ├── LLM API             ├── 产品思维                       │
+│   ├── Prompt工程          ├── 架构设计                       │
+│   ├── 向量数据库          ├── 技术领导力                      │
+│   ├── RAG应用             ├── 沟通协作                       │
+│   └── Agent开发           └── 持续学习                       │
+│                                                             │
+│   目标薪资：50-80w/年      目标职位：AI产品工程师/技术负责人    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 20. 常用数据结构
+## 执行承诺
 
-```java
-// 列表（有序，可重复）
-List<String> list = new ArrayList<>();
-list.add("a");
-list.get(0);
-list.size();
-// 类比 JS Array
+- [ ] 我承诺每天投入3小时学习
+- [ ] 我承诺按照项目驱动方式学习
+- [ ] 我承诺遇到困难不放弃，及时向Claude求助
+- [ ] 我承诺每周总结复盘，保持学习节奏
+- [ ] 我承诺在9-12个月内完成全部阶段目标
 
-// Map（键值对）
-Map<String, Object> map = new HashMap<>();
-map.put("key", "value");
-map.get("key");
-// 类比 JS Object / Map
+**签名**：_______________
+**日期**：2026年3月11日
 
-// Set（无序，不重复）
-Set<Integer> set = new HashSet<>();
-// 类比 JS Set
+---
+
+## 进度跟踪
+
+### 周度检查点
+
+| 周 | 计划主题 | 完成情况 | 笔记数 | 备注 |
+|---|---------|---------|-------|-----|
+| W1 | 环境搭建+项目概览 | | | |
+| W2 | Java语法（上） | | | |
+| W3 | Java语法（下） | | | |
+| W4 | Spring IoC/DI | | | |
+| W5 | Spring MVC | | | |
+| W6 | 配置管理 | | | |
+| W7 | JPA Entity | | | |
+| W8 | JPA Repository | | | |
+| W9 | JPA关联+事务 | | | |
+| W10 | Security基础 | | | |
+| W11 | JWT认证 | | | |
+| W12 | 权限控制 | | | |
+| W13 | Redis基础 | | | |
+| W14 | 缓存注解 | | | |
+| W15 | 分布式锁 | | | |
+| W16 | 缓存策略 | | | |
+| ... | ... | | | |
+
+---
+
+## 今日开始
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                       第一天任务                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   1. 确保项目能在本地运行                                    │
+│      - 检查JDK 15环境                                       │
+│      - 配置Gradle                                           │
+│      - 启动ma-doctor-service                                │
+│                                                             │
+│   2. 阅读并理解项目结构                                      │
+│      - 3个模块的职责                                        │
+│      - 主要的包结构                                         │
+│      - 入口文件位置                                         │
+│                                                             │
+│   3. 开始第一篇学习笔记                                      │
+│      - 记录项目结构                                         │
+│      - 记录遇到的问题和解决方案                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 附：关键概念速查
+> **记住**：你有一个企业级项目作为学习素材，有Claude Code作为24小时导师，有每天3小时的学习时间。这些条件比大多数人都好，关键是坚持执行。
 
-| 概念 | Java | JavaScript/TypeScript |
-|---|---|---|
-| 包管理 | Gradle / Maven | npm / yarn / pnpm |
-| 依赖声明 | `build.gradle` | `package.json` |
-| 入口文件 | `main()` 方法 | `index.js` |
-| 路由层 | `@RestController` | Express Router / Vue Router |
-| 业务层 | `@Service` | composables / store |
-| 数据层 | `@Repository` + JPA | Prisma / TypeORM / axios |
-| 数据库映射 | `@Entity` | TypeScript interface |
-| 数据传输对象 | DTO / VO / Pojo | TypeScript interface |
-| 依赖注入 | `@Autowired` | import + new（手动） |
-| 单例 | IoC 容器管理 | JS 模块天然单例 |
-| 配置文件 | `application.yml` | `.env` |
-| 装饰器 | 注解 `@Annotation` | Decorator `@Decorator` |
-| 可选值 | `Optional<T>` | `T \| null` / 可选链 `?.` |
-| 泛型 | `List<String>` | `Array<string>` |
-| 访问控制 | `private/protected/public` | `#private` / TypeScript `private` |
-
----
-
-*文档生成时间：2026-03-09*
