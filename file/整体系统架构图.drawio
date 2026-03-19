@@ -1,0 +1,138 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.12">
+  <diagram name="Page-1" id="aq_95O5i5FBFmQ1_TLo7">
+    <mxGraphModel dx="1587" dy="851" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-127" value="良医助手启动器架构图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="414.5" y="30" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-128" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=0;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="114.5" width="520" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-129" value="Python 启动器 (liangyi_startup.exe)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="105" y="15" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-130" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;dashed=0;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="45" y="60" width="200" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-131" value="核心模块 (core)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="70" y="75" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-132" value="更新管理器&lt;br&gt;(updater.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="65" y="105" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-133" value="&lt;span&gt;进程守护&lt;br&gt;(guardian.py)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=12;fontColor=#ffffff;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="65" y="155" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-134" value="消息监控&lt;br&gt;(message.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="65" y="205" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-135" value="路径配置&lt;br&gt;(paths.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="65" y="255" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-136" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=0;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="275" y="60" width="200" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-137" value="工具模块 (utils)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="300" y="70" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-138" value="日志工具&lt;br&gt;(logger.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontSize=12;fontColor=#ffffff;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="295" y="100" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-139" value="注册表操作&lt;br&gt;(registry.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="295" y="150" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-140" value="用户界面组件&lt;br&gt;(ui.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="295" y="200" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-141" value="进程处理&lt;br&gt;(process.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="295" y="250" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-142" value="压缩文件处理&lt;br&gt;(zip.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="295" y="300" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-143" value="程序入口 (main.py)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-128">
+          <mxGeometry x="170" y="370" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-144" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;dashed=0;container=1;collapsible=0;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="114.5" width="500" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-145" value="Electron 良医助手应用" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="145" y="15" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-146" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=0;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="40" y="60" width="420" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-147" value="源代码 (src)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="190" y="70" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-148" value="主进程入口&lt;br&gt;(main.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="80" y="103" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-149" value="统一配置管理&lt;br&gt;(config.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="80" y="153" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-150" value="进程监控模块&lt;br&gt;(monitor.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=12;fontColor=#ffffff;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="260" y="153" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-151" value="文件监听与事件处理&lt;br&gt;(watcher.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="80" y="253" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-152" value="预加载脚本&lt;br&gt;(preload.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="260" y="103" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-153" value="日志系统&lt;br&gt;(logger.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontSize=12;fontColor=#ffffff;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="80" y="203" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-154" value="工具函数集合&lt;br&gt;(utils.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="260" y="203" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-155" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=0;fontColor=#333333;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="40" y="340" width="420" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-156" value="其他目录" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="190" y="350" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-157" value="构建和部署脚本&lt;br&gt;(scripts/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontColor=#333333;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="60" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-158" value="本地开发服务器&lt;br&gt;(server/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontColor=#333333;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="190" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-159" value="静态资源文件&lt;br&gt;(static/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontColor=#333333;" vertex="1" parent="YqS6tUofdm1sSZz85Vhp-144">
+          <mxGeometry x="320" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-185" value="" style="shape=flexArrow;endArrow=block;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=none;strokeColor=#006EAF;fontSize=9;strokeWidth=1;startFill=0;" edge="1" parent="YqS6tUofdm1sSZz85Vhp-144" target="YqS6tUofdm1sSZz85Vhp-133">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="420" y="175.5" as="sourcePoint" />
+            <mxPoint x="520" y="75.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-186" value="&lt;font&gt;双向守护&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontColor=#28C5FF;fontSize=11;" vertex="1" connectable="0" parent="YqS6tUofdm1sSZz85Vhp-185">
+          <mxGeometry x="0.1029" y="3" relative="1" as="geometry">
+            <mxPoint x="-7" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-160" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="1090" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-161" value="通信与系统交互" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#333333" vertex="1" parent="1">
+          <mxGeometry x="515" y="630" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-163" value="共享缓存文件&lt;br&gt;(py-cache.json/node-cache.json)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="680" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-165" value="共享日志文件&lt;br&gt;(log.log)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="850" y="680" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-181" value="基于文件系统的通信机制" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="355" y="680" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YqS6tUofdm1sSZz85Vhp-182" value="远程更新服务器" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="680" width="190" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
