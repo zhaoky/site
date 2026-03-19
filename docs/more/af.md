@@ -45,7 +45,7 @@
 
 ### 项目模块结构
 
-```
+```text
 ma-doctor/
 ├── ma-doctor-common/    # 公共模块（实体、DAO、通用服务）
 ├── ma-doctor-message/   # 消息模块（站内信、推送）
@@ -58,7 +58,7 @@ ma-doctor/
 
 ### 项目驱动学习法
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Claude Code 指导学习流程                      │
 ├─────────────────────────────────────────────────────────────────┤
@@ -114,7 +114,7 @@ ma-doctor/
 
 ## 总体路线图（9-12 个月）
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           9-12个月总体规划                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -181,7 +181,7 @@ ma-doctor/
 
 **每日任务模板**：
 
-```
+```text
 1. 在项目中找到相关代码（30分钟）
 2. 让Claude解释代码原理（1小时）
 3. 仿写或修改一段代码（1小时）
@@ -206,7 +206,7 @@ ma-doctor/
 
 **重点文件阅读清单**：
 
-```
+```text
 ma-doctor-service/src/main/java/com/hitales/ma/doctor/
 ├── MaDoctorApplication.java          # 启动类
 ├── api/
@@ -233,7 +233,7 @@ ma-doctor-service/src/main/java/com/hitales/ma/doctor/
 
 **重点文件阅读清单**：
 
-```
+```text
 ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/
 ├── domain/
 │   ├── */entity/*.java              # 实体类
@@ -259,7 +259,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/
 
 **重点文件阅读清单**：
 
-```
+```text
 ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/config/
 └── SpringSecurityConfig.java         # 安全配置
 
@@ -288,7 +288,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/config/
 
 **项目中使用的缓存技术**：
 
-```
+```text
 - JetCache (com.alicp.jetcache:jetcache-anno)
 - Redisson (org.redisson:redisson)
 - hitales-commons-redis
@@ -304,7 +304,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/config/
 
 ### 第一阶段里程碑检查（第 4 个月末）
 
-```
+```text
 □ 能完全读懂项目代码结构
 □ 理解Spring Boot核心原理
 □ 熟练使用Spring Data JPA
@@ -319,7 +319,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/config/
 
 ## 第二阶段：全栈进阶（4-8 个月）
 
-### 阶段目标
+### 第二阶段目标
 
 - 深入理解微服务架构
 - 掌握消息队列、搜索引擎
@@ -338,7 +338,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/config/
 
 **项目中的微服务组件**：
 
-```
+```text
 - Spring Cloud 2020.0.6
 - Spring Cloud Alibaba 2021.1
 - Nacos（配置中心、服务发现）
@@ -358,7 +358,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/config/
 
 **项目中的 MQ 相关文件**：
 
-```
+```text
 ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 └── PatientVisitNotifyProducer.java    # 消息生产者示例
 
@@ -380,7 +380,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 **项目中 ES 相关**：
 
-```
+```text
 依赖：
 - org.elasticsearch.client:elasticsearch-rest-high-level-client
 - org.springframework.data:spring-data-elasticsearch
@@ -402,7 +402,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 ### 第二阶段里程碑检查（第 8 个月末）
 
-```
+```text
 □ 理解微服务架构设计原则
 □ 熟练使用RocketMQ
 □ 能使用Elasticsearch实现搜索
@@ -416,7 +416,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 ## 第三阶段：AI 工程化（8-12 个月）
 
-### 阶段目标
+### 第三阶段目标
 
 - 掌握 LLM 应用开发
 - 能将 AI 能力集成到现有系统
@@ -435,7 +435,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 **结合项目学习**：
 
-```
+```text
 项目中已有AI集成：
 - huihao-big-model SDK
 - hitales-jianyou-knowledge-engine（知识引擎）
@@ -488,7 +488,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 ### 第三阶段里程碑检查（第 12 个月末）
 
-```
+```text
 □ 熟练调用主流LLM API
 □ 掌握Prompt工程方法论
 □ 能搭建向量数据库
@@ -506,7 +506,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 #### 1. 代码解释
 
-```
+```text
 请解释这段代码的作用和原理：
 [粘贴代码]
 
@@ -518,7 +518,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 #### 2. 概念学习
 
-```
+```text
 我正在学习 [Spring Data JPA]，
 请结合我的项目 /Users/edy/work/factory/mabase/backend/ma-doctor 中的代码，
 帮我理解 [Repository接口] 的原理和用法。
@@ -526,7 +526,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 #### 3. 动手实践
 
-```
+```text
 我想在项目中实现一个 [功能描述]，
 请帮我：
 1. 分析需要修改哪些文件
@@ -537,7 +537,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 #### 4. 代码审查
 
-```
+```text
 请审查我写的这段代码：
 [粘贴代码]
 
@@ -550,7 +550,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 #### 5. 问题排查
 
-```
+```text
 我遇到了这个错误：
 [错误信息]
 
@@ -566,7 +566,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 ### 每日 3 小时分配
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    每日3小时学习分配                      │
 ├─────────────────────────────────────────────────────────┤
@@ -607,7 +607,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 ### 主要资源：Claude Code
 
-```
+```text
 优势：
 ✓ 24小时可用
 ✓ 能直接阅读你的项目代码
@@ -669,7 +669,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 ## 最终目标画像
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    AI产品工程师 技能画像                      │
 ├─────────────────────────────────────────────────────────────┤
@@ -737,7 +737,7 @@ ma-doctor-common/src/main/java/com/hitales/ma/doctor/common/producer/
 
 ## 今日开始
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                       第一天任务                             │
 ├─────────────────────────────────────────────────────────────┤

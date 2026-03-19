@@ -75,7 +75,7 @@
 
 ### Gradle 多模块结构
 
-```
+```text
 backend/
 ├── settings.gradle                  ← 注册所有子模块（相当于 pnpm-workspace.yaml）
 ├── build.gradle                     ← 全局依赖配置
@@ -97,7 +97,7 @@ backend/
 
 ### 分层包结构（domain 内部）
 
-```
+```text
 domain/
 └── message/                         ← 按业务域划分，不是按层划分
     ├── service/
@@ -133,13 +133,13 @@ package com.hitales.ma.doctor;
 
 包名等于文件夹路径，把点换成斜杠：
 
-```
+```text
 com.hitales.ma.doctor  →  com/hitales/ma/doctor/
 ```
 
 命名规则：
 
-```
+```text
 com.hitales          ← 公司（hitales.com 反转）
 com.hitales.ma       ← 产品（医助 ma）
 com.hitales.ma.doctor ← 模块（医生端）
@@ -278,7 +278,7 @@ Lombok 是编译期代码生成工具，让你少写大量样板代码。
 
 **Getter/Setter 命名规则：**
 
-```
+```text
 字段名           getter              setter
 msgId       →   getMsgId()          setMsgId(value)
 read        →   getRead()           setRead(value)
@@ -345,7 +345,7 @@ app.listen(3000, () => console.log('Server running on port 3000'))
 
 **启动流程：**
 
-```
+```text
 java -jar app.jar
     ↓
 JVM 启动，调用 main()
@@ -366,7 +366,7 @@ SpringApplication.run() 触发：
 
 ### IoC 容器 = Spring 维护的全局单例 Map
 
-```
+```text
 IoC 容器（等价于全局 Map）：
 {
   "privateMessageService"   → PrivateMessageService 的唯一实例,
@@ -389,7 +389,7 @@ const userService = container.get('userService')
 
 **类比前端：**
 
-```
+```text
 IoC 容器  ≈  Pinia store（全局单例状态管理）
 @Autowired ≈  useStore()（取单例实例）
 ```
@@ -429,7 +429,7 @@ public class PrivateMessageController extends AbstractController {
 
 ## 9. 分层架构
 
-```
+```text
 HTTP 请求
     ↓
 Controller（路由层）  职责：接收参数、参数校验、调 Service、返回结果
@@ -494,7 +494,7 @@ public class PrivateMessageController extends AbstractController {
 
 **路由拼接规则：**
 
-```
+```text
 类上 @RequestMapping + 方法上 @GetMapping = 完整路径
 /api/v1/ma/doctor/message  +  /private  =  /api/v1/ma/doctor/message/private
 ```
@@ -582,7 +582,7 @@ class MessageService {
 
 ## 12. Repository 层
 
-**Repository = Java 的 ORM 层，类比 Prisma / TypeORM**
+**Repository** = Java 的 ORM 层，类比 Prisma / TypeORM
 
 ```java
 @Repository
@@ -635,7 +635,7 @@ deleteBy{字段}                   // DELETE WHERE 字段=?
 
 ## 13. Entity 实体类
 
-**Entity = 数据库表的 Java 对象映射**
+**Entity** = 数据库表的 Java 对象映射
 
 ```java
 @Entity
@@ -705,7 +705,7 @@ interface PrivateMessage {
 
 ## 14. DTO / Pojo / VO
 
-**DTO（Data Transfer Object）= 网络传输的数据对象，类比 TypeScript interface**
+**DTO（Data Transfer Object）**= 网络传输的数据对象，类比 TypeScript interface
 
 ```java
 // PrivateMessageApiPojo.java（来自项目）
@@ -1089,7 +1089,7 @@ if (user == null) {
 
 ### 文件位置
 
-```
+```text
 src/main/resources/
 ├── application.yml             ← 基础配置（自动加载）
 ├── application-dev.yml         ← 开发环境
@@ -1100,7 +1100,7 @@ src/main/resources/
 
 ### 加载优先级（从低到高）
 
-```
+```text
 ① application-common.yml    最低
 ② application.yml
 ③ application-{profile}.yml  同名字段覆盖前者
@@ -1422,7 +1422,7 @@ Stream → List: .collect(Collectors.toList())
 
 ## 24. Redis 缓存
 
-**项目使用 Redisson 客户端（功能比 ioredis 更丰富）**
+**项目使用 Redisson 客户端**（功能比 ioredis 更丰富）
 
 ```java
 @Component
@@ -1484,7 +1484,7 @@ await redis.incr('counter:key')
 
 ## 25. 定时任务 XXL-Job
 
-**XXL-Job = 分布式任务调度平台，比 node-cron 多了可视化管理、失败重试、任务分片**
+**XXL-Job** = 分布式任务调度平台，比 node-cron 多了可视化管理、失败重试、任务分片
 
 ```java
 @Component
@@ -1523,7 +1523,7 @@ public class SomeCleanupJob {
 
 **Cron 表达式（XXL-Job 是 6 位，比 cron 多一个"秒"字段）：**
 
-```
+```text
 0 0 2 * * ?        每天凌晨 2 点
 0 */5 * * * ?      每 5 分钟
 0 0 0-8 * * ?      每天 0-8 点整点
@@ -1542,7 +1542,7 @@ cron.schedule('0 2 * * *', async () => {
 
 ## 26. 微服务 Feign
 
-**Feign = 声明式 HTTP 客户端，类比封装了 axios 的 API 层**
+**Feign** = 声明式 HTTP 客户端，类比封装了 axios 的 API 层
 
 ```java
 // 声明 Feign 客户端
@@ -1619,4 +1619,4 @@ async function getPatient(patientId) {
 
 ---
 
-*文档版本：2026-03-10 | 基于 ma-doctor-service 真实项目 | 面向前端架构师*
+文档版本：2026-03-10 | 基于 ma-doctor-service 真实项目 | 面向前端架构师
