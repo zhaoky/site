@@ -14,7 +14,7 @@
 | 掌握 RESTful API 设计规范 | 能解释项目中 API 路径的设计原则 |
 | 熟练使用请求处理注解 | 能说出 @GetMapping、@PostMapping、@PathVariable、@RequestBody 的区别 |
 | 掌握参数校验机制 | 能为 DTO 添加完整的校验注解 |
-| 理解统一响应格式 | 能解释 ServiceReturn<T> 的设计思路 |
+| 理解统一响应格式 | 能解释 `ServiceReturn<T>` 的设计思路 |
 | 手写符合项目规范的 Controller | 完成一个 CRUD Controller 实践任务 |
 
 ---
