@@ -28,6 +28,7 @@ export const sidebarRouter = {
   code: {
     'webpack 4': 'webpack4',
     'vue 2': 'vue2',
+    java: 'java',
   },
   exp: {
     方案沉淀: 'javascript',
