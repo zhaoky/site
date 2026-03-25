@@ -88,6 +88,11 @@ export const config = {
             link: '/code/vue2/392',
             activeMatch: '/code/vue2/',
           },
+          {
+            text: 'java',
+            link: '/code/java/week01',
+            activeMatch: '/code/java/',
+          },
         ],
       },
       {
