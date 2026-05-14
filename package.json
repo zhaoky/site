@@ -39,5 +39,8 @@
     "vue": "^3.4.3"
   },
   "type": "module",
-  "prettier": "@tcfs/eslint-config-standard/prettier"
+  "prettier": "@tcfs/eslint-config-standard/prettier",
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "husky"]
+  }
 }
