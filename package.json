@@ -39,5 +39,6 @@
     "vue": "^3.4.3"
   },
   "type": "module",
-  "prettier": "@tcfs/eslint-config-standard/prettier"
+  "prettier": "@tcfs/eslint-config-standard/prettier",
+  "packageManager": "pnpm@10.33.0"
 }
