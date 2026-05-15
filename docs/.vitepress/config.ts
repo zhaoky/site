@@ -108,6 +108,11 @@ export const config = {
             link: '/more/about',
             activeMatch: '/more/about',
           },
+          {
+            text: '自控力',
+            link: '/more/self-control',
+            activeMatch: '/more/self-control',
+          }
         ],
       },
     ],
